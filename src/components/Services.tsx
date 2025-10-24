@@ -54,10 +54,11 @@ export const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index}
-              className="transition-smooth hover:shadow-xl hover:-translate-y-2 border-2 group"
+              className="transition-smooth hover:shadow-xl hover-lift border-2 group opacity-0 animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>
-                <div className="w-14 h-14 rounded-lg gradient-primary flex items-center justify-center mb-4 group-hover:shadow-gold transition-smooth">
+                <div className="w-14 h-14 rounded-lg gradient-primary flex items-center justify-center mb-4 group-hover:shadow-gold transition-smooth group-hover:scale-110">
                   <service.icon className="h-7 w-7 text-white" />
                 </div>
                 <CardTitle className="text-2xl mb-3">{service.title}</CardTitle>

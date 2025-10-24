@@ -46,8 +46,11 @@ export const ProcessSteps = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <div key={index} className="relative">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 h-full transition-smooth hover:bg-white/10 hover:border-secondary/50">
-                <div className="w-16 h-16 rounded-xl bg-secondary flex items-center justify-center mb-6 shadow-gold">
+              <div 
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 h-full transition-smooth hover:bg-white/10 hover:border-secondary/50 hover-lift opacity-0 animate-fade-in-up group"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="w-16 h-16 rounded-xl bg-secondary flex items-center justify-center mb-6 shadow-gold group-hover:scale-110 transition-bounce">
                   <step.icon className="h-8 w-8 text-primary" />
                 </div>
                 <div className="text-6xl font-bold text-secondary/20 mb-4">{step.number}</div>

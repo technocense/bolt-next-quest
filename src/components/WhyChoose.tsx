@@ -52,8 +52,12 @@ export const WhyChoose = () => {
             
             <div className="space-y-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex gap-4 group">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-smooth">
+                <div 
+                  key={index} 
+                  className="flex gap-4 group opacity-0 animate-slide-in-left"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-smooth group-hover:scale-110">
                     <benefit.icon className="h-6 w-6 text-secondary" />
                   </div>
                   <div>
@@ -65,15 +69,15 @@ export const WhyChoose = () => {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative opacity-0 animate-slide-in-right">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl hover-lift">
               <img 
                 src={bahrainOffice} 
                 alt="Modern Business District in Bahrain" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-smooth hover:scale-105"
               />
             </div>
-            <div className="absolute -bottom-8 -left-8 bg-card p-6 rounded-xl shadow-xl border-2">
+            <div className="absolute -bottom-8 -left-8 bg-card p-6 rounded-xl shadow-xl border-2 hover-lift">
               <div className="text-4xl font-bold text-primary mb-2">15+</div>
               <div className="text-sm text-muted-foreground">Years of Excellence</div>
             </div>
