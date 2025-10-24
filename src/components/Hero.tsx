@@ -2,15 +2,12 @@ import { ArrowRight, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-business.jpg";
 import logo from "@/assets/bahrain-setup-logo.png";
-
 export const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center">
+  return <section className="relative min-h-screen flex items-center">
       {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      <div className="absolute inset-0 bg-cover bg-center" style={{
+      backgroundImage: `url(${heroImage})`
+    }}>
         <div className="absolute inset-0 gradient-hero" />
       </div>
       
@@ -56,7 +53,7 @@ export const Hero = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20 opacity-0 animate-fade-in-up animate-delay-400">
             <div className="hover-lift cursor-default">
-              <div className="text-4xl font-bold text-secondary mb-2">500+</div>
+              <div className="text-4xl font-bold text-secondary mb-2">100+</div>
               <div className="text-white/80">Companies Formed</div>
             </div>
             <div className="hover-lift cursor-default">
@@ -70,6 +67,5 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
