@@ -2,7 +2,59 @@ import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { useState } from "react";
+
 export const CTA = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    businessType: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('hubspot-contact', {
+        body: formData
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Request sent successfully!",
+        description: "Our team will contact you shortly.",
+      });
+
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        businessType: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="py-24">
       <div className="container mx-auto px-4">
@@ -64,38 +116,71 @@ export const CTA = () => {
 
           <div className="bg-card p-8 rounded-2xl shadow-xl border-2">
             <h3 className="text-2xl font-bold mb-6">Request a Consultation</h3>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium mb-2 block">First Name</label>
-                  <Input placeholder="John" />
+                  <Input 
+                    placeholder="John"
+                    value={formData.firstName}
+                    onChange={(e) => setFormData({...formData, firstName: e.target.value})}
+                    required
+                  />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-2 block">Last Name</label>
-                  <Input placeholder="Doe" />
+                  <Input 
+                    placeholder="Doe"
+                    value={formData.lastName}
+                    onChange={(e) => setFormData({...formData, lastName: e.target.value})}
+                    required
+                  />
                 </div>
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">Email</label>
-                <Input type="email" placeholder="john@example.com" />
+                <Input 
+                  type="email" 
+                  placeholder="john@example.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  required
+                />
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">Phone</label>
-                <Input type="tel" placeholder="+973 XXXX XXXX" />
+                <Input 
+                  type="tel" 
+                  placeholder="+973 XXXX XXXX"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                />
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">Business Type</label>
-                <Input placeholder="e.g., Trading, Consulting, Technology" />
+                <Input 
+                  placeholder="e.g., Trading, Consulting, Technology"
+                  value={formData.businessType}
+                  onChange={(e) => setFormData({...formData, businessType: e.target.value})}
+                />
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">Message</label>
                 <Textarea 
                   placeholder="Tell us about your business plans..." 
                   rows={4}
+                  value={formData.message}
+                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  required
                 />
               </div>
-              <Button size="lg" className="w-full gradient-primary hover:opacity-90">
-                Submit Request
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="w-full gradient-primary hover:opacity-90"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Submitting..." : "Submit Request"}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <p className="text-sm text-muted-foreground text-center">
