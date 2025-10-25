@@ -2,8 +2,6 @@ import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import consultationImage from "@/assets/consultation.jpg";
-
 export const CTA = () => {
   return (
     <section className="py-24">
@@ -20,12 +18,17 @@ export const CTA = () => {
               Schedule a free consultation with our experts. We'll discuss your goals and create a customized roadmap for your business success in Bahrain or Saudi Arabia.
             </p>
 
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl mb-8">
-              <img 
-                src={consultationImage} 
-                alt="Professional Business Consultation" 
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl mb-8 bg-muted">
+              <video 
                 className="w-full h-full object-cover"
-              />
+                controls
+                poster="/placeholder.svg"
+              >
+                <source src="/videos/consultation-intro.mp4" type="video/mp4" />
+                <p className="flex items-center justify-center h-full text-muted-foreground">
+                  Your browser does not support the video tag. Please upload a video to /public/videos/consultation-intro.mp4
+                </p>
+              </video>
             </div>
 
             <div className="space-y-4">

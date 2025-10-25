@@ -6,6 +6,7 @@ import { GovernmentAuthorities } from "@/components/GovernmentAuthorities";
 import { Calendly } from "@/components/Calendly";
 import { FAQ } from "@/components/FAQ";
 import { CTA } from "@/components/CTA";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -25,35 +26,35 @@ const Index = () => {
             <div>
               <h4 className="font-bold text-lg mb-4 text-secondary">Services</h4>
               <ul className="space-y-2 text-white/80">
-                <li>Company Formation</li>
-                <li>Business Licensing</li>
-                <li>Visa Services</li>
-                <li>Corporate Banking</li>
+                <li className="hover:text-secondary transition-colors cursor-pointer">Company Formation</li>
+                <li className="hover:text-secondary transition-colors cursor-pointer">Business Licensing</li>
+                <li className="hover:text-secondary transition-colors cursor-pointer">Visa Services</li>
+                <li className="hover:text-secondary transition-colors cursor-pointer">Corporate Banking</li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold text-lg mb-4 text-secondary">Countries</h4>
               <ul className="space-y-2 text-white/80">
-                <li>Bahrain Setup</li>
-                <li>Saudi Arabia Setup</li>
-                <li>Regional Expansion</li>
+                <li><Link to="/bahrain-setup" className="hover:text-secondary transition-colors">Bahrain Setup</Link></li>
+                <li><Link to="/saudi-arabia-setup" className="hover:text-secondary transition-colors">Saudi Arabia Setup</Link></li>
+                <li className="hover:text-secondary transition-colors cursor-pointer">Regional Expansion</li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold text-lg mb-4 text-secondary">Company</h4>
               <ul className="space-y-2 text-white/80">
-                <li>About Us</li>
-                <li>Our Team</li>
-                <li>Success Stories</li>
-                <li>Contact</li>
+                <li><Link to="/about" className="hover:text-secondary transition-colors">About Us</Link></li>
+                <li className="hover:text-secondary transition-colors cursor-pointer">Our Team</li>
+                <li className="hover:text-secondary transition-colors cursor-pointer">Success Stories</li>
+                <li><Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold text-lg mb-4 text-secondary">Legal</h4>
               <ul className="space-y-2 text-white/80">
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
-                <li>Compliance</li>
+                <li><Link to="/privacy-policy" className="hover:text-secondary transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms-of-service" className="hover:text-secondary transition-colors">Terms of Service</Link></li>
+                <li className="hover:text-secondary transition-colors cursor-pointer">Compliance</li>
               </ul>
             </div>
           </div>
