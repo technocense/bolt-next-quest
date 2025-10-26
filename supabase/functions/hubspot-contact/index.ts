@@ -1,19 +1,35 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-interface ContactRequest {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone?: string;
-  businessType?: string;
-  message?: string;
-  subject?: string;
-}
+// Server-side validation schema
+const contactSchema = z.object({
+  firstName: z.string().trim().min(1).max(50),
+  lastName: z.string().trim().min(1).max(50),
+  email: z.string().trim().email().max(255),
+  phone: z.string().trim().regex(/^\+?[1-9]\d{7,14}$/).optional().or(z.literal("")),
+  businessType: z.string().trim().max(100).optional(),
+  message: z.string().trim().min(10).max(1000).optional(),
+  subject: z.string().trim().max(200).optional(),
+  honeypot: z.string().max(0).optional(),
+});
+
+// Rate limiting map (in-memory, resets on function restart)
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+
+// Clean up old entries periodically
+const cleanupRateLimits = () => {
+  const now = Date.now();
+  for (const [ip, data] of rateLimitMap.entries()) {
+    if (data.resetTime < now) {
+      rateLimitMap.delete(ip);
+    }
+  }
+};
 
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
@@ -22,6 +38,38 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Clean up old rate limit entries
+    cleanupRateLimits();
+
+    // Rate limiting - 5 submissions per IP per hour
+    const clientIP = req.headers.get('x-forwarded-for') || 
+                     req.headers.get('x-real-ip') || 
+                     'unknown';
+    const now = Date.now();
+    const rateLimit = rateLimitMap.get(clientIP);
+
+    if (rateLimit && rateLimit.resetTime > now) {
+      if (rateLimit.count >= 5) {
+        console.warn(`Rate limit exceeded for IP: ${clientIP}`);
+        return new Response(
+          JSON.stringify({ 
+            error: 'Too many requests. Please try again later.',
+            retryAfter: Math.ceil((rateLimit.resetTime - now) / 1000 / 60) + ' minutes'
+          }),
+          {
+            status: 429,
+            headers: { 'Content-Type': 'application/json', ...corsHeaders },
+          }
+        );
+      }
+      rateLimit.count++;
+    } else {
+      rateLimitMap.set(clientIP, { 
+        count: 1, 
+        resetTime: now + 3600000 // 1 hour
+      });
+    }
+
     const hubspotApiKey = Deno.env.get('HUBSPOT_API_KEY');
     
     if (!hubspotApiKey) {
@@ -35,7 +83,42 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    const contactData: ContactRequest = await req.json();
+    // Parse and validate request body
+    const rawData = await req.json();
+    
+    // Honeypot check - if filled, silently reject (bot detected)
+    if (rawData.honeypot && rawData.honeypot.length > 0) {
+      console.warn('Honeypot triggered, possible bot submission from IP:', clientIP);
+      // Return fake success to not alert the bot
+      return new Response(
+        JSON.stringify({ success: true, message: 'Contact received' }),
+        {
+          status: 200,
+          headers: { 'Content-Type': 'application/json', ...corsHeaders },
+        }
+      );
+    }
+
+    // Validate with Zod schema
+    let contactData;
+    try {
+      contactData = contactSchema.parse(rawData);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        console.error('Validation failed:', error.errors);
+        return new Response(
+          JSON.stringify({ 
+            error: 'Validation failed', 
+            details: error.errors.map(e => ({ field: e.path.join('.'), message: e.message }))
+          }),
+          {
+            status: 400,
+            headers: { 'Content-Type': 'application/json', ...corsHeaders },
+          }
+        );
+      }
+      throw error;
+    }
     console.log('Received contact submission:', { email: contactData.email });
 
     // Create or update contact in HubSpot

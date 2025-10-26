@@ -5,26 +5,44 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+
+const consultationSchema = z.object({
+  firstName: z.string().trim().min(1, "First name is required").max(50, "Maximum 50 characters"),
+  lastName: z.string().trim().min(1, "Last name is required").max(50, "Maximum 50 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email too long"),
+  phone: z.string().trim().regex(/^\+?[1-9]\d{7,14}$/, "Invalid phone number format").optional().or(z.literal("")),
+  businessType: z.string().trim().max(100, "Maximum 100 characters").optional(),
+  message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000, "Maximum 1000 characters"),
+  honeypot: z.string().max(0).optional(),
+});
 
 export const CTA = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    businessType: "",
-    message: "",
+
+  const form = useForm<z.infer<typeof consultationSchema>>({
+    resolver: zodResolver(consultationSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      businessType: "",
+      message: "",
+      honeypot: "",
+    },
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const onSubmit = async (values: z.infer<typeof consultationSchema>) => {
     setIsSubmitting(true);
 
     try {
       const { data, error } = await supabase.functions.invoke('hubspot-contact', {
-        body: formData
+        body: values
       });
 
       if (error) throw error;
@@ -34,20 +52,12 @@ export const CTA = () => {
         description: "Our team will contact you shortly.",
       });
 
-      // Reset form
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        businessType: "",
-        message: "",
-      });
-    } catch (error) {
+      form.reset();
+    } catch (error: any) {
       console.error('Error submitting form:', error);
       toast({
         title: "Error",
-        description: "Failed to send request. Please try again.",
+        description: error.message || "Failed to send request. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -116,77 +126,112 @@ export const CTA = () => {
 
           <div className="bg-card p-8 rounded-2xl shadow-xl border-2">
             <h3 className="text-2xl font-bold mb-6">Request a Consultation</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-medium mb-2 block">First Name</label>
-                  <Input 
-                    placeholder="John"
-                    value={formData.firstName}
-                    onChange={(e) => setFormData({...formData, firstName: e.target.value})}
-                    required
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
+                    name="firstName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>First Name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="John" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="lastName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Last Name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Doe" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
                 </div>
-                <div>
-                  <label className="text-sm font-medium mb-2 block">Last Name</label>
-                  <Input 
-                    placeholder="Doe"
-                    value={formData.lastName}
-                    onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                    required
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="text-sm font-medium mb-2 block">Email</label>
-                <Input 
-                  type="email" 
-                  placeholder="john@example.com"
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  required
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input type="email" placeholder="john@example.com" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              <div>
-                <label className="text-sm font-medium mb-2 block">Phone</label>
-                <Input 
-                  type="tel" 
-                  placeholder="+973 XXXX XXXX"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Phone (Optional)</FormLabel>
+                      <FormControl>
+                        <Input type="tel" placeholder="+973 XXXX XXXX" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              <div>
-                <label className="text-sm font-medium mb-2 block">Business Type</label>
-                <Input 
-                  placeholder="e.g., Trading, Consulting, Technology"
-                  value={formData.businessType}
-                  onChange={(e) => setFormData({...formData, businessType: e.target.value})}
+                <FormField
+                  control={form.control}
+                  name="businessType"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Business Type (Optional)</FormLabel>
+                      <FormControl>
+                        <Input placeholder="e.g., Trading, Consulting, Technology" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              <div>
-                <label className="text-sm font-medium mb-2 block">Message</label>
-                <Textarea 
-                  placeholder="Tell us about your business plans..." 
-                  rows={4}
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  required
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Message</FormLabel>
+                      <FormControl>
+                        <Textarea placeholder="Tell us about your business plans..." rows={4} {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="w-full gradient-primary hover:opacity-90"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Submitting..." : "Submit Request"}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <p className="text-sm text-muted-foreground text-center">
-                We'll respond within 24 hours
-              </p>
-            </form>
+                {/* Honeypot field - hidden from users, catches bots */}
+                <FormField
+                  control={form.control}
+                  name="honeypot"
+                  render={({ field }) => (
+                    <div className="hidden">
+                      <Input {...field} tabIndex={-1} autoComplete="off" />
+                    </div>
+                  )}
+                />
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full gradient-primary hover:opacity-90"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Submit Request"}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <p className="text-sm text-muted-foreground text-center">
+                  We'll respond within 24 hours
+                </p>
+              </form>
+            </Form>
           </div>
         </div>
       </div>
