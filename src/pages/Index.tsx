@@ -44,6 +44,7 @@ const Index = () => {
               <h4 className="font-bold text-lg mb-4 text-secondary">Company</h4>
               <ul className="space-y-2 text-white/80">
                 <li><Link to="/about" className="hover:text-secondary transition-colors">About Us</Link></li>
+                <li><Link to="/blog" className="hover:text-secondary transition-colors">Blog</Link></li>
                 <li className="hover:text-secondary transition-colors cursor-pointer">Our Team</li>
                 <li className="hover:text-secondary transition-colors cursor-pointer">Success Stories</li>
                 <li><Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link></li>
