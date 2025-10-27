@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "whatsapp": "WhatsApp",
+    "contact": "Kontaktieren Sie uns"
+  },
+  "hero": {
+    "title": "Vereinfachen Sie Ihre Unternehmensgründung in Bahrain und Saudi-Arabien",
+    "subtitle": "Ihr vertrauenswürdiger Partner für nahtlose Firmengründung, Lizenzierung und Geschäftsdienstleistungen im gesamten GCC",
+    "description": "Wir kümmern uns um alle Komplexitäten der Unternehmensgründung, von der Registrierung bis zur Lizenzierung, damit Sie sich auf das Wesentliche konzentrieren können - das Wachstum Ihres Unternehmens. Schneller, zuverlässiger und problemloser Service garantiert.",
+    "startBusiness": "Starten Sie Ihr Geschäft",
+    "bookConsultation": "Beratung buchen",
+    "companiesFormed": "Gegründete Unternehmen",
+    "avgSetupTime": "Durchschnittliche Einrichtungszeit",
+    "successRate": "Erfolgsquote",
+    "days": "Tage"
+  },
+  "services": {
+    "title": "Umfassende Unternehmensgründungsdienste",
+    "subtitle": "Alles, was Sie brauchen, um Ihr Geschäft in der Golfregion zu etablieren und auszubauen",
+    "companyFormation": "Firmengründung",
+    "companyFormationDesc": "Komplette Registrierungs- und Gründungsdienste für alle Unternehmenstypen",
+    "licensing": "Lizenzierung und Genehmigungen",
+    "licensingDesc": "Schnelle Beschaffung aller erforderlichen Lizenzen und behördlichen Genehmigungen",
+    "visa": "Visa und Einwanderung",
+    "visaDesc": "Mitarbeiter- und Investorenvisum-Bearbeitung und Aufenthaltsgenehmigungen",
+    "banking": "Banking-Einrichtung",
+    "bankingDesc": "Eröffnung von Firmenkonten und Management von Bankbeziehungen",
+    "office": "Bürolösungen",
+    "officeDesc": "Virtuelle Büros, Coworking-Spaces und physische Büroeinrichtungen",
+    "ongoing": "Laufende Compliance",
+    "ongoingDesc": "Jährliche Verlängerungen, rechtliche Compliance und Geschäftsunterstützungsdienste"
+  },
+  "whyChoose": {
+    "title": "Warum mit uns zusammenarbeiten",
+    "subtitle": "Ihr Erfolg ist unsere Priorität",
+    "description": "Mit jahrelanger Erfahrung in der Golfregion haben wir Tausenden von Unternehmern und Unternehmen geholfen, ihre Präsenz erfolgreich aufzubauen.",
+    "expertise": "Expertenwissen",
+    "expertiseDesc": "Tiefes Verständnis lokaler Vorschriften und Geschäftspraktiken",
+    "fast": "Schnelle Bearbeitung",
+    "fastDesc": "Optimierte Prozesse sorgen für schnelle Einrichtung und Lizenzierung",
+    "transparent": "Transparente Preisgestaltung",
+    "transparentDesc": "Keine versteckten Gebühren - klare Preise von Anfang an",
+    "support": "Engagierte Unterstützung",
+    "supportDesc": "Persönliche Unterstützung während Ihrer gesamten Geschäftsreise",
+    "yearsExcellence": "Jahre der Exzellenz"
+  },
+  "process": {
+    "title": "Einfacher 4-Schritte-Prozess",
+    "subtitle": "Von der Beratung bis zum Start begleiten wir Sie auf jedem Schritt",
+    "consultation": "Beratung",
+    "consultationDesc": "Besprechen Sie Ihre Geschäftsanforderungen und wählen Sie die richtige Struktur",
+    "documentation": "Dokumentation",
+    "documentationDesc": "Wir kümmern uns um alle Unterlagen und Behördeneingaben",
+    "approval": "Genehmigung",
+    "approvalDesc": "Beschleunigen Sie Ihre Anträge durch unsere Regierungskontakte",
+    "launch": "Start",
+    "launchDesc": "Erhalten Sie Ihre Lizenz und beginnen Sie mit Ihrem Geschäft"
+  },
+  "authorities": {
+    "title": "Vertrauenswürdige Partnerschaften im gesamten GCC",
+    "subtitle": "Wir arbeiten eng mit allen Regierungsbehörden zusammen",
+    "description": "Unsere etablierten Beziehungen und die enge Zusammenarbeit mit wichtigen Regierungsstellen in Bahrain und Saudi-Arabien gewährleisten nahtlose, effiziente und konforme Unternehmensgründungsprozesse",
+    "badge": "Offiziell anerkannte Partner",
+    "closing": "Mit jahrelanger Erfahrung in der Navigation durch regulatorische Anforderungen pflegen wir direkte Kommunikationskanäle mit allen relevanten Behörden und stellen sicher, dass Ihre Firmengründung mit Fachwissen und Glaubwürdigkeit behandelt wird, der Sie vertrauen können."
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen"
+  },
+  "cta": {
+    "title": "Bereit, Ihre Geschäftsreise zu beginnen?",
+    "subtitle": "Kontaktieren Sie uns noch heute für eine kostenlose Beratung",
+    "name": "Ihr Name",
+    "email": "Ihre E-Mail",
+    "phone": "Telefonnummer",
+    "message": "Erzählen Sie uns von Ihrem Geschäft",
+    "submit": "Nachricht senden",
+    "submitting": "Wird gesendet..."
+  },
+  "footer": {
+    "services": "Dienstleistungen",
+    "companyFormation": "Firmengründung",
+    "licensing": "Lizenzierung und Genehmigungen",
+    "visa": "Visa-Dienste",
+    "banking": "Banking-Einrichtung",
+    "countries": "Länder",
+    "bahrain": "Bahrain",
+    "saudiArabia": "Saudi-Arabien",
+    "company": "Unternehmen",
+    "about": "Über uns",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "legal": "Rechtliches",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "common": {
+    "readMore": "Weiterlesen",
+    "learnMore": "Mehr erfahren",
+    "getStarted": "Loslegen",
+    "backHome": "Zurück zur Startseite"
+  }
+}

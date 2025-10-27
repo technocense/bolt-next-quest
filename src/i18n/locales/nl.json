@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "whatsapp": "WhatsApp",
+    "contact": "Neem contact op"
+  },
+  "hero": {
+    "title": "Vereenvoudig uw bedrijfsopzet in Bahrein en Saudi-Arabië",
+    "subtitle": "Uw vertrouwde partner voor naadloze bedrijfsvorming, vergunningen en zakelijke diensten in de hele GCC",
+    "description": "Wij regelen alle complexiteiten van bedrijfsopzet, van registratie tot vergunningen, zodat u zich kunt concentreren op wat het belangrijkst is - het laten groeien van uw bedrijf. Snelle, betrouwbare en probleemloze service gegarandeerd.",
+    "startBusiness": "Start uw bedrijf",
+    "bookConsultation": "Boek consultatie",
+    "companiesFormed": "Bedrijven opgericht",
+    "avgSetupTime": "Gemiddelde opzettijd",
+    "successRate": "Succespercentage",
+    "days": "dagen"
+  },
+  "services": {
+    "title": "Uitgebreide bedrijfsopzetdiensten",
+    "subtitle": "Alles wat u nodig heeft om uw bedrijf in de Golfstreek op te zetten en te laten groeien",
+    "companyFormation": "Bedrijfsvorming",
+    "companyFormationDesc": "Volledige registratie- en oprichtingsdiensten voor alle bedrijfstypes",
+    "licensing": "Vergunningen en vergunningen",
+    "licensingDesc": "Verkrijg snel alle noodzakelijke vergunningen en wettelijke goedkeuringen",
+    "visa": "Visa en immigratie",
+    "visaDesc": "Verwerking van werknemers- en investeerdersvisa en verblijfsvergunningen",
+    "banking": "Bankinstelling",
+    "bankingDesc": "Opening van bedrijfsrekeningen en beheer van bankrelaties",
+    "office": "Kantooroplossingen",
+    "officeDesc": "Virtuele kantoren, coworking spaces en fysieke kantoorinrichting",
+    "ongoing": "Voortdurende naleving",
+    "ongoingDesc": "Jaarlijkse verlengingen, juridische naleving en zakelijke ondersteuningsdiensten"
+  },
+  "whyChoose": {
+    "title": "Waarom met ons samenwerken",
+    "subtitle": "Uw succes is onze prioriteit",
+    "description": "Met jarenlange ervaring in de Golfstreek hebben we duizenden ondernemers en bedrijven geholpen hun aanwezigheid succesvol te vestigen.",
+    "expertise": "Expertise kennis",
+    "expertiseDesc": "Diepgaand begrip van lokale regelgeving en zakelijke praktijken",
+    "fast": "Snelle verwerking",
+    "fastDesc": "Gestroomlijnde processen zorgen voor snelle opzet en vergunning",
+    "transparent": "Transparante prijzen",
+    "transparentDesc": "Geen verborgen kosten - duidelijke prijzen vanaf het begin",
+    "support": "Toegewijde ondersteuning",
+    "supportDesc": "Persoonlijke hulp gedurende uw zakelijke reis",
+    "yearsExcellence": "Jaren van uitmuntendheid"
+  },
+  "process": {
+    "title": "Eenvoudig 4-stappenproces",
+    "subtitle": "Van consultatie tot lancering begeleiden we u bij elke stap",
+    "consultation": "Consultatie",
+    "consultationDesc": "Bespreek uw zakelijke behoeften en kies de juiste structuur",
+    "documentation": "Documentatie",
+    "documentationDesc": "Wij regelen alle papierwerk en overheidsindieningen",
+    "approval": "Goedkeuring",
+    "approvalDesc": "Versnel uw aanvragen via onze overheidsconnecties",
+    "launch": "Lancering",
+    "launchDesc": "Ontvang uw vergunning en begin met het runnen van uw bedrijf"
+  },
+  "authorities": {
+    "title": "Vertrouwde partnerschappen in de hele GCC",
+    "subtitle": "We werken nauw samen met alle overheidsinstanties",
+    "description": "Onze gevestigde relaties en nauwe samenwerking met belangrijke overheidsinstanties in Bahrein en Saudi-Arabië zorgen voor naadloze, efficiënte en conforme bedrijfsopzetprocessen",
+    "badge": "Officieel erkende partners",
+    "closing": "Met jarenlange ervaring in het navigeren door regelgevende vereisten onderhouden we directe communicatiekanalen met alle relevante autoriteiten, zodat uw bedrijfsvorming wordt afgehandeld met expertise en geloofwaardigheid waar u op kunt vertrouwen."
+  },
+  "faq": {
+    "title": "Veelgestelde vragen"
+  },
+  "cta": {
+    "title": "Klaar om uw zakelijke reis te beginnen?",
+    "subtitle": "Neem vandaag nog contact op voor een gratis consultatie",
+    "name": "Uw naam",
+    "email": "Uw e-mail",
+    "phone": "Telefoonnummer",
+    "message": "Vertel ons over uw bedrijf",
+    "submit": "Bericht verzenden",
+    "submitting": "Verzenden..."
+  },
+  "footer": {
+    "services": "Diensten",
+    "companyFormation": "Bedrijfsvorming",
+    "licensing": "Vergunningen en vergunningen",
+    "visa": "Visadiensten",
+    "banking": "Bankinstelling",
+    "countries": "Landen",
+    "bahrain": "Bahrein",
+    "saudiArabia": "Saudi-Arabië",
+    "company": "Bedrijf",
+    "about": "Over ons",
+    "blog": "Blog",
+    "contact": "Contact",
+    "legal": "Juridisch",
+    "privacy": "Privacybeleid",
+    "terms": "Servicevoorwaarden",
+    "rights": "Alle rechten voorbehouden."
+  },
+  "common": {
+    "readMore": "Lees meer",
+    "learnMore": "Meer informatie",
+    "getStarted": "Aan de slag",
+    "backHome": "Terug naar huis"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "whatsapp": "WhatsApp",
+    "contact": "Contattaci"
+  },
+  "hero": {
+    "title": "Semplifica l'Avvio della Tua Attività in Bahrain e Arabia Saudita",
+    "subtitle": "Il tuo partner di fiducia per la costituzione di società, licenze e servizi aziendali in tutto il GCC",
+    "description": "Gestiamo tutte le complessità dell'avvio di un'attività, dalla registrazione alle licenze, in modo che tu possa concentrarti su ciò che conta davvero: far crescere il tuo business. Servizio veloce, affidabile e senza problemi garantito.",
+    "startBusiness": "Avvia la Tua Attività",
+    "bookConsultation": "Prenota Consulenza",
+    "companiesFormed": "Società Costituite",
+    "avgSetupTime": "Tempo Medio di Configurazione",
+    "successRate": "Tasso di Successo",
+    "days": "giorni"
+  },
+  "services": {
+    "title": "Servizi Completi per l'Avvio di Attività",
+    "subtitle": "Tutto ciò di cui hai bisogno per avviare e far crescere la tua attività nella regione del Golfo",
+    "companyFormation": "Costituzione Società",
+    "companyFormationDesc": "Servizi completi di registrazione e incorporazione per tutti i tipi di attività",
+    "licensing": "Licenze e Permessi",
+    "licensingDesc": "Ottieni rapidamente tutte le licenze e le approvazioni normative necessarie",
+    "visa": "Visti e Immigrazione",
+    "visaDesc": "Elaborazione visti per dipendenti e investitori e permessi di soggiorno",
+    "banking": "Configurazione Bancaria",
+    "bankingDesc": "Apertura conti aziendali e gestione delle relazioni bancarie",
+    "office": "Soluzioni per Uffici",
+    "officeDesc": "Uffici virtuali, spazi di coworking e configurazioni di uffici fisici",
+    "ongoing": "Conformità Continua",
+    "ongoingDesc": "Rinnovi annuali, conformità legale e servizi di supporto aziendale"
+  },
+  "whyChoose": {
+    "title": "Perché Collaborare con Noi",
+    "subtitle": "Il Tuo Successo è la Nostra Priorità",
+    "description": "Con anni di esperienza nella regione del Golfo, abbiamo aiutato migliaia di imprenditori e aziende a stabilire con successo la loro presenza.",
+    "expertise": "Conoscenza Esperta",
+    "expertiseDesc": "Profonda comprensione delle normative locali e delle pratiche commerciali",
+    "fast": "Elaborazione Rapida",
+    "fastDesc": "Processi semplificati garantiscono rapida configurazione e licenza",
+    "transparent": "Prezzi Trasparenti",
+    "transparentDesc": "Nessuna commissione nascosta - prezzi chiari fin dall'inizio",
+    "support": "Supporto Dedicato",
+    "supportDesc": "Assistenza personale durante tutto il tuo percorso aziendale",
+    "yearsExcellence": "Anni di Eccellenza"
+  },
+  "process": {
+    "title": "Semplice Processo in 4 Passaggi",
+    "subtitle": "Dalla consulenza al lancio, ti guidiamo in ogni fase",
+    "consultation": "Consulenza",
+    "consultationDesc": "Discuti le esigenze della tua attività e scegli la struttura giusta",
+    "documentation": "Documentazione",
+    "documentationDesc": "Gestiamo tutte le pratiche e le presentazioni governative",
+    "approval": "Approvazione",
+    "approvalDesc": "Accelera le tue richieste attraverso le nostre connessioni governative",
+    "launch": "Lancio",
+    "launchDesc": "Ricevi la tua licenza e inizia a gestire la tua attività"
+  },
+  "authorities": {
+    "title": "Partnership Affidabili in Tutto il GCC",
+    "subtitle": "Lavoriamo a Stretto Contatto con Tutte le Autorità Governative",
+    "description": "Le nostre relazioni consolidate e la stretta collaborazione con gli enti governativi chiave in Bahrain e Arabia Saudita garantiscono processi di avvio aziendale fluidi, efficienti e conformi",
+    "badge": "Partner Ufficialmente Riconosciuti",
+    "closing": "Con anni di esperienza nella navigazione dei requisiti normativi, manteniamo canali di comunicazione diretti con tutte le autorità pertinenti, garantendo che la formazione della tua azienda sia gestita con competenza e credibilità di cui puoi fidarti."
+  },
+  "faq": {
+    "title": "Domande Frequenti"
+  },
+  "cta": {
+    "title": "Pronto a Iniziare il Tuo Viaggio Aziendale?",
+    "subtitle": "Contattaci oggi per una consulenza gratuita",
+    "name": "Il Tuo Nome",
+    "email": "La Tua Email",
+    "phone": "Numero di Telefono",
+    "message": "Raccontaci della tua attività",
+    "submit": "Invia Messaggio",
+    "submitting": "Invio in corso..."
+  },
+  "footer": {
+    "services": "Servizi",
+    "companyFormation": "Costituzione Società",
+    "licensing": "Licenze e Permessi",
+    "visa": "Servizi Visti",
+    "banking": "Configurazione Bancaria",
+    "countries": "Paesi",
+    "bahrain": "Bahrain",
+    "saudiArabia": "Arabia Saudita",
+    "company": "Azienda",
+    "about": "Chi Siamo",
+    "blog": "Blog",
+    "contact": "Contatti",
+    "legal": "Legale",
+    "privacy": "Informativa sulla Privacy",
+    "terms": "Termini di Servizio",
+    "rights": "Tutti i diritti riservati."
+  },
+  "common": {
+    "readMore": "Leggi di Più",
+    "learnMore": "Scopri di Più",
+    "getStarted": "Inizia",
+    "backHome": "Torna alla Home"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "whatsapp": "WhatsApp",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "Simplify Your Business Setup in Bahrain & Saudi Arabia",
+    "subtitle": "Your trusted partner for seamless company formation, licensing, and business services across the GCC",
+    "description": "We handle all the complexities of business setup, from registration to licensing, so you can focus on what matters most - growing your business. Fast, reliable, and hassle-free service guaranteed.",
+    "startBusiness": "Start Your Business",
+    "bookConsultation": "Book Consultation",
+    "companiesFormed": "Companies Formed",
+    "avgSetupTime": "Avg. Setup Time",
+    "successRate": "Success Rate",
+    "days": "days"
+  },
+  "services": {
+    "title": "Comprehensive Business Setup Services",
+    "subtitle": "Everything you need to establish and grow your business in the Gulf region",
+    "companyFormation": "Company Formation",
+    "companyFormationDesc": "Complete registration and incorporation services for all business types",
+    "licensing": "Licensing & Permits",
+    "licensingDesc": "Obtain all necessary licenses and regulatory approvals quickly",
+    "visa": "Visa & Immigration",
+    "visaDesc": "Employee and investor visa processing and residence permits",
+    "banking": "Banking Setup",
+    "bankingDesc": "Corporate account opening and banking relationship management",
+    "office": "Office Solutions",
+    "officeDesc": "Virtual offices, coworking spaces, and physical office setups",
+    "ongoing": "Ongoing Compliance",
+    "ongoingDesc": "Annual renewals, legal compliance, and business support services"
+  },
+  "whyChoose": {
+    "title": "Why Partner With Us",
+    "subtitle": "Your Success is Our Priority",
+    "description": "With years of experience in the Gulf region, we've helped thousands of entrepreneurs and businesses establish their presence successfully.",
+    "expertise": "Expert Knowledge",
+    "expertiseDesc": "Deep understanding of local regulations and business practices",
+    "fast": "Fast Processing",
+    "fastDesc": "Streamlined processes ensure quick setup and licensing",
+    "transparent": "Transparent Pricing",
+    "transparentDesc": "No hidden fees - clear pricing from the start",
+    "support": "Dedicated Support",
+    "supportDesc": "Personal assistance throughout your business journey",
+    "yearsExcellence": "Years of Excellence"
+  },
+  "process": {
+    "title": "Simple 4-Step Process",
+    "subtitle": "From consultation to launch, we guide you every step of the way",
+    "consultation": "Consultation",
+    "consultationDesc": "Discuss your business needs and choose the right structure",
+    "documentation": "Documentation",
+    "documentationDesc": "We handle all paperwork and government submissions",
+    "approval": "Approval",
+    "approvalDesc": "Fast-track your applications through our government connections",
+    "launch": "Launch",
+    "launchDesc": "Receive your license and start operating your business"
+  },
+  "authorities": {
+    "title": "Trusted Partnerships Across GCC",
+    "subtitle": "We Work Closely With All Government Authorities",
+    "description": "Our established relationships and close collaboration with key government bodies in Bahrain and Saudi Arabia ensure seamless, efficient, and compliant business setup processes",
+    "badge": "Officially Recognized Partners",
+    "closing": "With years of experience navigating regulatory requirements, we maintain direct communication channels with all relevant authorities, ensuring your company formation is handled with expertise and credibility you can trust."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions"
+  },
+  "cta": {
+    "title": "Ready to Start Your Business Journey?",
+    "subtitle": "Get in touch today for a free consultation",
+    "name": "Your Name",
+    "email": "Your Email",
+    "phone": "Phone Number",
+    "message": "Tell us about your business",
+    "submit": "Send Message",
+    "submitting": "Sending..."
+  },
+  "footer": {
+    "services": "Services",
+    "companyFormation": "Company Formation",
+    "licensing": "Licensing & Permits",
+    "visa": "Visa Services",
+    "banking": "Banking Setup",
+    "countries": "Countries",
+    "bahrain": "Bahrain",
+    "saudiArabia": "Saudi Arabia",
+    "company": "Company",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved."
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "backHome": "Back to Home"
+  }
+}
