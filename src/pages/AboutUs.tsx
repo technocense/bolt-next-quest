@@ -1,12 +1,19 @@
-import { ArrowLeft, Users, Target, Award, Globe } from "lucide-react";
+import { ArrowLeft, Users, Target, Award, Globe, TrendingUp, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 const AboutUs = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>About Us - Leading Business Setup Consultancy in Bahrain & Saudi Arabia</title>
+        <meta name="description" content="Learn about our expert team providing comprehensive business setup services in Bahrain and Saudi Arabia. 8+ years of experience, 500+ successful company formations across the GCC region." />
+        <meta name="keywords" content="business setup consultancy, company formation Bahrain, Saudi Arabia business consultants, GCC business services" />
+        <link rel="canonical" href="https://yoursite.com/about" />
+      </Helmet>
       {/* Navigation */}
-      <nav className="bg-primary text-white py-6">
+      <nav className="bg-primary text-white py-6" role="navigation" aria-label="Main navigation">
         <div className="container mx-auto px-4">
           <Link to="/">
             <Button variant="ghost" className="text-white hover:bg-white/10">
@@ -18,16 +25,19 @@ const AboutUs = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-white">
+      <header className="py-20 bg-gradient-to-br from-primary to-primary/80 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">About BahrainSetup</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">About BahrainSetup - Your Gateway to Gulf Business Success</h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              Your trusted partner for establishing and growing businesses in the Gulf region. With years of expertise and a commitment to excellence, we make business setup simple, efficient, and successful.
+              Since 2016, we've been the trusted partner for international entrepreneurs and businesses expanding into Bahrain and Saudi Arabia. With over 500 successful company formations and an expert team fluent in both markets, we transform complex regulatory processes into seamless business launches.
+            </p>
+            <p className="text-lg text-white/80 mt-4">
+              Specialized in complete end-to-end business setup services including company registration, licensing, visa processing, and ongoing compliance management across the GCC region.
             </p>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Mission & Vision */}
       <section className="py-20">
@@ -39,7 +49,7 @@ const AboutUs = () => {
               </div>
               <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To empower entrepreneurs and businesses to establish their presence in the Gulf region by providing comprehensive, transparent, and efficient company formation services that ensure 100% ownership and full compliance.
+                To empower entrepreneurs and businesses to establish their presence in the Gulf region by providing comprehensive, transparent, and efficient company formation services that ensure 100% foreign ownership and full regulatory compliance. We simplify the complexities of Middle Eastern business registration so you can focus on growth and profitability from day one.
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-card shadow-lg hover-lift">
@@ -48,7 +58,7 @@ const AboutUs = () => {
               </div>
               <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To be the leading business setup consultancy in the Gulf region, recognized for our expertise, integrity, and commitment to helping businesses thrive in Bahrain and Saudi Arabia's dynamic markets.
+                To be the leading business setup consultancy in the Gulf region, recognized for our unparalleled expertise, unwavering integrity, and proven track record in helping international businesses thrive in Bahrain and Saudi Arabia's rapidly evolving markets. We aspire to set the industry standard for professional company formation services across the GCC.
               </p>
             </div>
           </div>
@@ -90,6 +100,33 @@ const AboutUs = () => {
               <h3 className="text-xl font-bold mb-3">Results</h3>
               <p className="text-muted-foreground">
                 Focused on achieving your business goals with proven strategies
+              </p>
+            </div>
+            <div className="bg-card p-8 rounded-xl shadow-md text-center">
+              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="h-8 w-8 text-secondary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Innovation</h3>
+              <p className="text-muted-foreground">
+                Embracing cutting-edge solutions to streamline business formation processes
+              </p>
+            </div>
+            <div className="bg-card p-8 rounded-xl shadow-md text-center">
+              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-secondary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Compliance</h3>
+              <p className="text-muted-foreground">
+                Ensuring full adherence to all regulatory requirements and legal frameworks
+              </p>
+            </div>
+            <div className="bg-card p-8 rounded-xl shadow-md text-center">
+              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
+                <Globe className="h-8 w-8 text-secondary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Global Perspective</h3>
+              <p className="text-muted-foreground">
+                Understanding international business needs with local market expertise
               </p>
             </div>
           </div>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { Helmet } from 'react-helmet-async';
 
 const blogPosts = [
   {
@@ -90,6 +91,12 @@ const blogPosts = [
 const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Business Setup Blog | Expert Insights on Bahrain & Saudi Arabia Company Formation</title>
+        <meta name="description" content="Expert guides and insights on starting businesses in Bahrain and Saudi Arabia. Learn about company formation, licensing, Vision 2030 opportunities, and GCC business strategies from industry professionals." />
+        <meta name="keywords" content="business setup blog, Bahrain company formation guide, Saudi Arabia Vision 2030, GCC business insights, company registration tips" />
+        <link rel="canonical" href="https://yoursite.com/blog" />
+      </Helmet>
       {/* Navigation */}
       <nav className="border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 py-4">

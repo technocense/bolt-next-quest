@@ -1,10 +1,16 @@
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Privacy Policy | BahrainSetup Data Protection & Security</title>
+        <meta name="description" content="Read our comprehensive privacy policy covering data collection, usage, and protection for business setup services in Bahrain and Saudi Arabia. GDPR compliant practices." />
+        <link rel="canonical" href="https://yoursite.com/privacy-policy" />
+      </Helmet>
       {/* Navigation */}
       <nav className="bg-primary text-white py-6">
         <div className="container mx-auto px-4">
@@ -18,16 +24,19 @@ const PrivacyPolicy = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-white">
+      <header className="py-20 bg-gradient-to-br from-primary to-primary/80 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Privacy Policy</h1>
             <p className="text-xl text-white/90">
+              Your data security and privacy are our top priorities
+            </p>
+            <p className="text-lg text-white/80 mt-4">
               Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             </p>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Content */}
       <section className="py-20">

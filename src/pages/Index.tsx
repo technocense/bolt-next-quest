@@ -8,12 +8,19 @@ import { FAQ } from "@/components/FAQ";
 import { CTA } from "@/components/CTA";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 
 const Index = () => {
   const { t } = useTranslation();
   
   return (
     <main className="min-h-screen">
+      <Helmet>
+        <title>Business Setup in Bahrain & Saudi Arabia | 100% Foreign Ownership Company Formation</title>
+        <meta name="description" content="Expert business setup services in Bahrain and Saudi Arabia. Complete company formation, CR registration, licensing, and visa services. 48-hour fast-track setup with 100% foreign ownership. 500+ successful formations." />
+        <meta name="keywords" content="business setup Bahrain, company formation Saudi Arabia, GCC business registration, 100% foreign ownership, CR registration, commercial licensing, investor visa GCC" />
+        <link rel="canonical" href="https://yoursite.com/" />
+      </Helmet>
       <Hero />
       <Services />
       <WhyChoose />

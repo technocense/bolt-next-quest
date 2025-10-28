@@ -1,10 +1,17 @@
-import { ArrowLeft, CheckCircle, Building2, FileText, Users, Briefcase } from "lucide-react";
+import { ArrowLeft, CheckCircle, Building2, FileText, Users, Briefcase, Globe, Award, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 const BahrainSetup = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Company Setup in Bahrain 2025 - 100% Foreign Ownership | Fast CR Registration</title>
+        <meta name="description" content="Start your business in Bahrain with 100% foreign ownership. Expert company formation services from BHD 800. Complete CR registration, licensing, and visa support in 48 hours. 500+ successful setups." />
+        <meta name="keywords" content="company setup Bahrain, business formation Bahrain, Bahrain CR registration, 100% foreign ownership Bahrain, WLL company Bahrain, Bahrain business license" />
+        <link rel="canonical" href="https://yoursite.com/bahrain-setup" />
+      </Helmet>
       {/* Navigation */}
       <nav className="bg-primary text-white py-6">
         <div className="container mx-auto px-4">
@@ -18,16 +25,19 @@ const BahrainSetup = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-white">
+      <header className="py-20 bg-gradient-to-br from-primary to-primary/80 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Company Setup in Bahrain</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Company Setup in Bahrain | Complete Business Formation Services</h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              Establish your business in Bahrain with 100% foreign ownership. Fast, efficient, and compliant company formation services in one of the Gulf's most business-friendly environments.
+              Launch your business in Bahrain with 100% foreign ownership starting from BHD 800. Our comprehensive company formation services handle CR registration, commercial licensing, visa processing, and corporate banking. Fast-track setup in as little as 48 hours with full Ministry of Industry and Commerce support.
+            </p>
+            <p className="text-lg text-white/80 mt-4">
+              Bahrain offers the Gulf's most business-friendly environment: zero corporate tax for most sectors, strategic access to Saudi Arabia via King Fahd Causeway, modern infrastructure, and streamlined government services for international entrepreneurs.
             </p>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Why Bahrain */}
       <section className="py-20">
@@ -91,6 +101,33 @@ const BahrainSetup = () => {
               <h3 className="text-xl font-bold mb-3">Quality of Life</h3>
               <p className="text-muted-foreground">
                 Excellent infrastructure, international schools, and vibrant expat community
+              </p>
+            </div>
+            <div className="p-6 rounded-xl bg-card shadow-md hover-lift">
+              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+                <Globe className="h-6 w-6 text-secondary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">GCC Market Access</h3>
+              <p className="text-muted-foreground">
+                Direct connectivity to 60+ million consumers across the Gulf Cooperation Council
+              </p>
+            </div>
+            <div className="p-6 rounded-xl bg-card shadow-md hover-lift">
+              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+                <Award className="h-6 w-6 text-secondary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Financial Hub</h3>
+              <p className="text-muted-foreground">
+                Home to leading banks and financial institutions with established fintech ecosystem
+              </p>
+            </div>
+            <div className="p-6 rounded-xl bg-card shadow-md hover-lift">
+              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+                <Zap className="h-6 w-6 text-secondary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Digital Government</h3>
+              <p className="text-muted-foreground">
+                Leading eGovernment services for seamless online registration and licensing
               </p>
             </div>
           </div>

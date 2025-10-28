@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Helmet } from 'react-helmet-async';
 
 const contactSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(50, "Maximum 50 characters"),
@@ -68,6 +69,12 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Contact Us - Free Business Setup Consultation | Bahrain & Saudi Arabia Experts</title>
+        <meta name="description" content="Get expert advice on company formation in Bahrain and Saudi Arabia. Free consultation with our business setup specialists. WhatsApp, email, or schedule a meeting. 24/7 support available." />
+        <meta name="keywords" content="business setup consultation, contact Bahrain company formation, Saudi Arabia business advisor, free business setup consultation" />
+        <link rel="canonical" href="https://yoursite.com/contact" />
+      </Helmet>
       {/* Navigation */}
       <nav className="bg-primary text-white py-6">
         <div className="container mx-auto px-4">

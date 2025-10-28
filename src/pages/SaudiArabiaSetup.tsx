@@ -1,10 +1,17 @@
-import { ArrowLeft, CheckCircle, Building2, FileText, Briefcase } from "lucide-react";
+import { ArrowLeft, CheckCircle, Building2, FileText, Briefcase, Zap, TrendingUp, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 const SaudiArabiaSetup = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Saudi Arabia Company Setup 2025 | Vision 2030 Business Formation Services</title>
+        <meta name="description" content="Establish your business in Saudi Arabia with 100% foreign ownership under Vision 2030. Expert LLC formation, MISA licensing, and CR registration. Access to 35M+ consumers and trillion-dollar mega projects." />
+        <meta name="keywords" content="Saudi Arabia company setup, business formation KSA, Vision 2030 investment, MISA license Saudi Arabia, Saudi LLC formation, CR registration Riyadh" />
+        <link rel="canonical" href="https://yoursite.com/saudi-arabia-setup" />
+      </Helmet>
       {/* Navigation */}
       <nav className="bg-primary text-white py-6">
         <div className="container mx-auto px-4">
@@ -18,16 +25,19 @@ const SaudiArabiaSetup = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-white">
+      <header className="py-20 bg-gradient-to-br from-primary to-primary/80 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Company Setup in Saudi Arabia</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Saudi Arabia Company Setup | Vision 2030 Business Formation</h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              Enter the largest economy in the Middle East with 100% foreign ownership. Comprehensive support for business setup in the Kingdom of Saudi Arabia under Vision 2030 reforms.
+              Enter the Middle East's largest economy with comprehensive company formation services. We provide complete MISA investment licensing, Ministry of Commerce CR registration, GOSI compliance, and 100% foreign ownership setup across all Vision 2030 sectors.
+            </p>
+            <p className="text-lg text-white/80 mt-4">
+              Saudi Arabia is transforming under Vision 2030 with unprecedented opportunities: $500B+ in mega projects (NEOM, Red Sea), diversified economy beyond oil, advanced digital infrastructure, and competitive tax incentives for foreign investors.
             </p>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Why Saudi Arabia */}
       <section className="py-20">
@@ -91,6 +101,33 @@ const SaudiArabiaSetup = () => {
               <h3 className="text-xl font-bold mb-3">Digital Transformation</h3>
               <p className="text-muted-foreground">
                 Leading the region in digital infrastructure and innovation
+              </p>
+            </div>
+            <div className="p-6 rounded-xl bg-card shadow-md hover-lift">
+              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+                <Zap className="h-6 w-6 text-secondary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Special Economic Zones</h3>
+              <p className="text-muted-foreground">
+                Access to tax holidays, customs exemptions, and streamlined regulations in SEZs
+              </p>
+            </div>
+            <div className="p-6 rounded-xl bg-card shadow-md hover-lift">
+              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+                <TrendingUp className="h-6 w-6 text-secondary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Growth Sectors</h3>
+              <p className="text-muted-foreground">
+                Tourism, entertainment, technology, renewable energy, and healthcare sectors booming
+              </p>
+            </div>
+            <div className="p-6 rounded-xl bg-card shadow-md hover-lift">
+              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+                <Users className="h-6 w-6 text-secondary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Young Demographics</h3>
+              <p className="text-muted-foreground">
+                70% of population under 35 with high digital adoption and purchasing power
               </p>
             </div>
           </div>
