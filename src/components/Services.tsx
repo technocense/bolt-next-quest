@@ -1,52 +1,55 @@
 import { Building2, FileCheck, CreditCard, Users, Briefcase, Shield } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-
-const services = [
-  {
-    icon: Building2,
-    title: "Company Formation",
-    description: "Complete business registration in Bahrain and Saudi Arabia with 100% foreign ownership options. We handle all documentation and government liaison."
-  },
-  {
-    icon: FileCheck,
-    title: "Licensing & Permits",
-    description: "Obtain all necessary commercial licenses and permits. From trade licenses to industrial permits, we ensure full regulatory compliance."
-  },
-  {
-    icon: Users,
-    title: "Investor & Work Visas",
-    description: "Secure residency and work permits for you and your team. Fast-track visa processing with complete immigration support."
-  },
-  {
-    icon: CreditCard,
-    title: "Corporate Banking",
-    description: "Open business bank accounts with leading banks in Bahrain and Saudi Arabia. Multi-currency accounts with online banking facilities."
-  },
-  {
-    icon: Shield,
-    title: "Compliance & Renewal",
-    description: "Annual CR renewal, license maintenance, and ongoing regulatory compliance. We keep your business compliant year-round."
-  },
-  {
-    icon: Briefcase,
-    title: "Office & PRO Services",
-    description: "Virtual offices, meeting rooms, and full PRO services. Physical presence without the overhead costs."
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export const Services = () => {
+  const { t } = useTranslation();
+  
+  const services = [
+    {
+      icon: Building2,
+      title: t('services.companyFormation'),
+      description: t('services.companyFormationDesc')
+    },
+    {
+      icon: FileCheck,
+      title: t('services.licensing'),
+      description: t('services.licensingDesc')
+    },
+    {
+      icon: Users,
+      title: t('services.visaServices'),
+      description: t('services.visaServicesDesc')
+    },
+    {
+      icon: CreditCard,
+      title: t('services.corporateBanking'),
+      description: t('services.corporateBankingDesc')
+    },
+    {
+      icon: Shield,
+      title: t('services.compliance'),
+      description: t('services.complianceDesc')
+    },
+    {
+      icon: Briefcase,
+      title: t('services.officeServices'),
+      description: t('services.officeServicesDesc')
+    }
+  ];
+
   return (
     <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block mb-4 px-4 py-2 bg-secondary/10 border border-secondary/20 rounded-full">
-            <span className="text-secondary font-semibold">Our Services</span>
+            <span className="text-secondary font-semibold">{t('services.badge')}</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Comprehensive Business Setup Solutions
+            {t('services.title')}
           </h2>
           <p className="text-xl text-muted-foreground">
-            From initial consultation to full operational status, we provide end-to-end support for your business establishment in the Gulf region.
+            {t('services.subtitle')}
           </p>
         </div>
 

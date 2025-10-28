@@ -1,85 +1,85 @@
 import { useEffect, useState } from "react";
 import { Shield, Building2, Users, FileCheck, Landmark, ScrollText, Banknote, Scale } from "lucide-react";
-
-const authorities = [
-  // Bahrain Authorities
-  {
-    name: "Ministry of Industry and Commerce",
-    country: "Bahrain",
-    icon: Building2,
-    description: "Business registration and commercial licensing authority"
-  },
-  {
-    name: "Economic Development Board (EDB)",
-    country: "Bahrain",
-    icon: Shield,
-    description: "Investment promotion and business development"
-  },
-  {
-    name: "Labour Market Regulatory Authority",
-    country: "Bahrain",
-    icon: Users,
-    description: "Work permits and employment regulations"
-  },
-  {
-    name: "Central Bank of Bahrain",
-    country: "Bahrain",
-    icon: Landmark,
-    description: "Financial services licensing and oversight"
-  },
-  {
-    name: "National Bureau for Revenue (NBR)",
-    country: "Bahrain",
-    icon: FileCheck,
-    description: "Tax registration and VAT compliance"
-  },
-  {
-    name: "Ministry of Interior - Nationality, Passports & Residence Affairs",
-    country: "Bahrain",
-    icon: ScrollText,
-    description: "Visa processing and residency permits"
-  },
-  // Saudi Arabia Authorities
-  {
-    name: "Ministry of Investment (MISA)",
-    country: "Saudi Arabia",
-    icon: Shield,
-    description: "Investment licensing and foreign investment facilitation"
-  },
-  {
-    name: "Ministry of Commerce",
-    country: "Saudi Arabia",
-    icon: Building2,
-    description: "Commercial registration and business licensing"
-  },
-  {
-    name: "Ministry of Human Resources & Social Development",
-    country: "Saudi Arabia",
-    icon: Users,
-    description: "Work permits, Saudization compliance, and labor regulations"
-  },
-  {
-    name: "Saudi Central Bank (SAMA)",
-    country: "Saudi Arabia",
-    icon: Landmark,
-    description: "Financial sector licensing and monetary authority"
-  },
-  {
-    name: "Zakat, Tax and Customs Authority (ZATCA)",
-    country: "Saudi Arabia",
-    icon: Banknote,
-    description: "Tax registration, VAT, Zakat, and customs compliance"
-  },
-  {
-    name: "Ministry of Investment - Legal Affairs",
-    country: "Saudi Arabia",
-    icon: Scale,
-    description: "Legal framework and investment protection services"
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export const GovernmentAuthorities = () => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const authorities = [
+    {
+      name: t('governmentAuthorities.moic'),
+      country: t('governmentAuthorities.bahrain'),
+      icon: Building2,
+      description: t('governmentAuthorities.moicDesc')
+    },
+    {
+      name: t('governmentAuthorities.edb'),
+      country: t('governmentAuthorities.bahrain'),
+      icon: Shield,
+      description: t('governmentAuthorities.edbDesc')
+    },
+    {
+      name: t('governmentAuthorities.lmra'),
+      country: t('governmentAuthorities.bahrain'),
+      icon: Users,
+      description: t('governmentAuthorities.lmraDesc')
+    },
+    {
+      name: t('governmentAuthorities.cbb'),
+      country: t('governmentAuthorities.bahrain'),
+      icon: Landmark,
+      description: t('governmentAuthorities.cbbDesc')
+    },
+    {
+      name: t('governmentAuthorities.nbr'),
+      country: t('governmentAuthorities.bahrain'),
+      icon: FileCheck,
+      description: t('governmentAuthorities.nbrDesc')
+    },
+    {
+      name: t('governmentAuthorities.moi'),
+      country: t('governmentAuthorities.bahrain'),
+      icon: ScrollText,
+      description: t('governmentAuthorities.moiDesc')
+    },
+    {
+      name: t('governmentAuthorities.misa'),
+      country: t('governmentAuthorities.saudiArabia'),
+      icon: Shield,
+      description: t('governmentAuthorities.misaDesc')
+    },
+    {
+      name: t('governmentAuthorities.moc'),
+      country: t('governmentAuthorities.saudiArabia'),
+      icon: Building2,
+      description: t('governmentAuthorities.mocDesc')
+    },
+    {
+      name: t('governmentAuthorities.mhrsd'),
+      country: t('governmentAuthorities.saudiArabia'),
+      icon: Users,
+      description: t('governmentAuthorities.mhrsdDesc')
+    },
+    {
+      name: t('governmentAuthorities.sama'),
+      country: t('governmentAuthorities.saudiArabia'),
+      icon: Landmark,
+      description: t('governmentAuthorities.samaDesc')
+    },
+    {
+      name: t('governmentAuthorities.zatca'),
+      country: t('governmentAuthorities.saudiArabia'),
+      icon: Banknote,
+      description: t('governmentAuthorities.zatcaDesc')
+    },
+    {
+      name: t('governmentAuthorities.misaLegal'),
+      country: t('governmentAuthorities.saudiArabia'),
+      icon: Scale,
+      description: t('governmentAuthorities.misaLegalDesc')
+    }
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -94,17 +94,17 @@ export const GovernmentAuthorities = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-sm uppercase tracking-wider text-muted-foreground mb-3">
-            We Work Closely With All Government Authorities
+            {t('governmentAuthorities.subtitle')}
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Trusted Partnerships Across GCC
+            {t('governmentAuthorities.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Our established relationships and close collaboration with key government bodies in Bahrain and Saudi Arabia ensure seamless, efficient, and compliant business setup processes
+            {t('governmentAuthorities.description')}
           </p>
           <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-6 py-3 rounded-full border border-secondary/20">
             <Shield className="h-5 w-5" />
-            <span className="font-semibold">Officially Recognized Partners</span>
+            <span className="font-semibold">{t('governmentAuthorities.badge')}</span>
           </div>
         </div>
 
@@ -158,7 +158,7 @@ export const GovernmentAuthorities = () => {
 
         <div className="mt-16 text-center">
           <p className="text-muted-foreground max-w-3xl mx-auto">
-            With years of experience navigating regulatory requirements, we maintain direct communication channels with all relevant authorities, ensuring your company formation is handled with expertise and credibility you can trust.
+            {t('governmentAuthorities.closing')}
           </p>
         </div>
       </div>

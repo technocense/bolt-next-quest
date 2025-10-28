@@ -1,45 +1,48 @@
 import { MessageSquare, FileText, CheckCircle2, Rocket } from "lucide-react";
-
-const steps = [
-  {
-    icon: MessageSquare,
-    number: "01",
-    title: "Initial Consultation",
-    description: "Discuss your business vision, goals, and requirements. We'll analyze your needs and recommend the optimal business structure and jurisdiction."
-  },
-  {
-    icon: FileText,
-    number: "02",
-    title: "Documentation & Application",
-    description: "We prepare all required documents, applications, and submissions. Our team handles all paperwork and government liaison on your behalf."
-  },
-  {
-    icon: CheckCircle2,
-    number: "03",
-    title: "Approval & Registration",
-    description: "Track your application progress in real-time. We coordinate with all relevant authorities to obtain approvals and complete registration."
-  },
-  {
-    icon: Rocket,
-    number: "04",
-    title: "Launch & Ongoing Support",
-    description: "Receive your licenses and begin operations. We provide continuous support for compliance, renewals, and business growth."
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export const ProcessSteps = () => {
+  const { t } = useTranslation();
+  
+  const steps = [
+    {
+      icon: MessageSquare,
+      number: "01",
+      title: t('processSteps.step1Title'),
+      description: t('processSteps.step1Desc')
+    },
+    {
+      icon: FileText,
+      number: "02",
+      title: t('processSteps.step2Title'),
+      description: t('processSteps.step2Desc')
+    },
+    {
+      icon: CheckCircle2,
+      number: "03",
+      title: t('processSteps.step3Title'),
+      description: t('processSteps.step3Desc')
+    },
+    {
+      icon: Rocket,
+      number: "04",
+      title: t('processSteps.step4Title'),
+      description: t('processSteps.step4Desc')
+    }
+  ];
+
   return (
     <section className="py-24 gradient-primary text-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full">
-            <span className="text-secondary font-semibold">Our Process</span>
+            <span className="text-secondary font-semibold">{t('processSteps.badge')}</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Four Simple Steps to Success
+            {t('processSteps.title')}
           </h2>
           <p className="text-xl text-white/90">
-            A proven methodology that has helped hundreds of businesses establish themselves in the Gulf region.
+            {t('processSteps.subtitle')}
           </p>
         </div>
 
