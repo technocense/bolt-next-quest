@@ -196,7 +196,19 @@
     "q5": "Do you provide office space and business address services?",
     "a5": "Yes, we offer flexible solutions including virtual offices, serviced offices, and assistance in finding permanent office space. A registered business address is mandatory for company formation, and we can provide this as part of our service packages.",
     "q6": "What ongoing support do you provide after company formation?",
-    "a6": "We offer comprehensive post-formation support including annual license renewals, visa processing, accounting services, compliance management, and business advisory. Our relationship doesn't end at registration – we're your long-term partner for success in the Gulf."
+    "a6": "We offer comprehensive post-formation support including annual license renewals, visa processing, accounting services, compliance management, and business advisory. Our relationship doesn't end at registration – we're your long-term partner for success in the Gulf.",
+    "q7": "What are the costs involved in setting up a business?",
+    "a7": "Costs vary depending on business type, location, and services required. In Bahrain, basic company formation starts from BHD 800, while Saudi Arabia packages typically start from SAR 15,000. This includes government fees, registration costs, and our service fees. We provide detailed cost breakdowns during consultation with no hidden charges.",
+    "q8": "Do I need to be physically present during the setup process?",
+    "a8": "Physical presence requirements vary by jurisdiction. For Bahrain, initial presence may be required for bank account opening and biometric registration. Saudi Arabia often requires presence for final documentation. However, we minimize your time commitment through efficient scheduling and can handle most procedures with power of attorney.",
+    "q9": "What banking options are available for my business?",
+    "a9": "We work with all major banks in Bahrain and Saudi Arabia including local and international institutions. Options include multi-currency accounts, online banking facilities, and merchant services. We assist with the entire account opening process and help you choose the bank that best fits your business needs.",
+    "q10": "How does VAT compliance work in Bahrain and Saudi Arabia?",
+    "a10": "Bahrain implemented 10% VAT in 2019, while Saudi Arabia has 15% VAT. We assist with VAT registration, filing returns, and ongoing compliance. Our team ensures you meet all tax obligations and can connect you with qualified accountants for comprehensive tax planning and management.",
+    "q11": "Can I hire international employees for my company?",
+    "a11": "Yes, both Bahrain and Saudi Arabia allow hiring international employees. We handle work permit applications, visa processing, and ensure compliance with labor regulations including Saudization requirements in Saudi Arabia. We guide you through quota systems, salary requirements, and all employment documentation.",
+    "q12": "What happens if I want to close or transfer my business?",
+    "a12": "We assist with business closure procedures including license cancellation, employee settlements, and final clearances from government authorities. For business transfers, we manage the entire ownership transfer process, ensuring legal compliance and smooth transition. Exit procedures typically take 2-4 weeks depending on business complexity."
   },
   "cta": {
     "badge": "Get Started",
