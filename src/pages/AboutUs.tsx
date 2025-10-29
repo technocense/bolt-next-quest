@@ -2,8 +2,12 @@ import { ArrowLeft, Users, Target, Award, Globe, TrendingUp, Shield } from "luci
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 const AboutUs = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="min-h-screen">
       <Helmet>
@@ -14,13 +18,14 @@ const AboutUs = () => {
       </Helmet>
       {/* Navigation */}
       <nav className="bg-primary text-white py-6" role="navigation" aria-label="Main navigation">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 flex justify-between items-center">
           <Link to="/">
             <Button variant="ghost" className="text-white hover:bg-white/10">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
+              {t('common.backToHome')}
             </Button>
           </Link>
+          <LanguageSwitcher />
         </div>
       </nav>
 
@@ -28,12 +33,12 @@ const AboutUs = () => {
       <header className="py-20 bg-gradient-to-br from-primary to-primary/80 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">About BahrainSetup - Your Gateway to Gulf Business Success</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">{t('about.heroTitle')}</h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              Since 2016, we've been the trusted partner for international entrepreneurs and businesses expanding into Bahrain and Saudi Arabia. With over 500 successful company formations and an expert team fluent in both markets, we transform complex regulatory processes into seamless business launches.
+              {t('about.heroSubtitle')}
             </p>
             <p className="text-lg text-white/80 mt-4">
-              Specialized in complete end-to-end business setup services including company registration, licensing, visa processing, and ongoing compliance management across the GCC region.
+              {t('about.heroDescription')}
             </p>
           </div>
         </div>
@@ -47,18 +52,18 @@ const AboutUs = () => {
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-6">
                 <Target className="h-8 w-8 text-secondary" />
               </div>
-              <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
+              <h2 className="text-3xl font-bold mb-4">{t('about.mission')}</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To empower entrepreneurs and businesses to establish their presence in the Gulf region by providing comprehensive, transparent, and efficient company formation services that ensure 100% foreign ownership and full regulatory compliance. We simplify the complexities of Middle Eastern business registration so you can focus on growth and profitability from day one.
+                {t('about.missionText')}
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-card shadow-lg hover-lift">
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-6">
                 <Globe className="h-8 w-8 text-secondary" />
               </div>
-              <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
+              <h2 className="text-3xl font-bold mb-4">{t('about.vision')}</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To be the leading business setup consultancy in the Gulf region, recognized for our unparalleled expertise, unwavering integrity, and proven track record in helping international businesses thrive in Bahrain and Saudi Arabia's rapidly evolving markets. We aspire to set the industry standard for professional company formation services across the GCC.
+                {t('about.visionText')}
               </p>
             </div>
           </div>
@@ -69,9 +74,9 @@ const AboutUs = () => {
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Our Core Values</h2>
+            <h2 className="text-4xl font-bold mb-4">{t('about.values')}</h2>
             <p className="text-lg text-muted-foreground">
-              The principles that guide everything we do
+              {t('about.valuesSubtitle')}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -79,54 +84,54 @@ const AboutUs = () => {
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Excellence</h3>
+              <h3 className="text-xl font-bold mb-3">{t('about.excellence')}</h3>
               <p className="text-muted-foreground">
-                Delivering the highest quality service in every interaction and transaction
+                {t('about.excellenceDesc')}
               </p>
             </div>
             <div className="bg-card p-8 rounded-xl shadow-md text-center">
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Trust</h3>
+              <h3 className="text-xl font-bold mb-3">{t('about.trust')}</h3>
               <p className="text-muted-foreground">
-                Building lasting relationships through transparency and integrity
+                {t('about.trustDesc')}
               </p>
             </div>
             <div className="bg-card p-8 rounded-xl shadow-md text-center">
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
                 <Target className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Results</h3>
+              <h3 className="text-xl font-bold mb-3">{t('about.results')}</h3>
               <p className="text-muted-foreground">
-                Focused on achieving your business goals with proven strategies
+                {t('about.resultsDesc')}
               </p>
             </div>
             <div className="bg-card p-8 rounded-xl shadow-md text-center">
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
                 <TrendingUp className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Innovation</h3>
+              <h3 className="text-xl font-bold mb-3">{t('about.innovation')}</h3>
               <p className="text-muted-foreground">
-                Embracing cutting-edge solutions to streamline business formation processes
+                {t('about.innovationDesc')}
               </p>
             </div>
             <div className="bg-card p-8 rounded-xl shadow-md text-center">
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
                 <Shield className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Compliance</h3>
+              <h3 className="text-xl font-bold mb-3">{t('about.compliance')}</h3>
               <p className="text-muted-foreground">
-                Ensuring full adherence to all regulatory requirements and legal frameworks
+                {t('about.complianceDesc')}
               </p>
             </div>
             <div className="bg-card p-8 rounded-xl shadow-md text-center">
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
                 <Globe className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Global Perspective</h3>
+              <h3 className="text-xl font-bold mb-3">{t('about.globalPerspective')}</h3>
               <p className="text-muted-foreground">
-                Understanding international business needs with local market expertise
+                {t('about.globalPerspectiveDesc')}
               </p>
             </div>
           </div>
@@ -137,41 +142,41 @@ const AboutUs = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-center">Why Choose BahrainSetup?</h2>
+            <h2 className="text-4xl font-bold mb-8 text-center">{t('about.whyChooseTitle')}</h2>
             <div className="space-y-6">
               <div className="flex gap-4 p-6 rounded-xl bg-card shadow-md">
                 <div className="w-2 bg-secondary rounded-full flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Expert Knowledge</h3>
+                  <h3 className="text-xl font-bold mb-2">{t('about.expertKnowledge')}</h3>
                   <p className="text-muted-foreground">
-                    Deep understanding of Bahrain and Saudi Arabia's business regulations, legal requirements, and market dynamics
+                    {t('about.expertKnowledgeDesc')}
                   </p>
                 </div>
               </div>
               <div className="flex gap-4 p-6 rounded-xl bg-card shadow-md">
                 <div className="w-2 bg-secondary rounded-full flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl font-bold mb-2">End-to-End Service</h3>
+                  <h3 className="text-xl font-bold mb-2">{t('about.endToEnd')}</h3>
                   <p className="text-muted-foreground">
-                    From initial consultation to final license approval, we handle every aspect of your business setup
+                    {t('about.endToEndDesc')}
                   </p>
                 </div>
               </div>
               <div className="flex gap-4 p-6 rounded-xl bg-card shadow-md">
                 <div className="w-2 bg-secondary rounded-full flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Fast Processing</h3>
+                  <h3 className="text-xl font-bold mb-2">{t('about.fastProcessing')}</h3>
                   <p className="text-muted-foreground">
-                    Streamlined processes ensure your business is up and running in as little as 48 hours
+                    {t('about.fastProcessingDesc')}
                   </p>
                 </div>
               </div>
               <div className="flex gap-4 p-6 rounded-xl bg-card shadow-md">
                 <div className="w-2 bg-secondary rounded-full flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl font-bold mb-2">100% Success Rate</h3>
+                  <h3 className="text-xl font-bold mb-2">{t('about.successRate')}</h3>
                   <p className="text-muted-foreground">
-                    Every client we've worked with has successfully established their business in the Gulf
+                    {t('about.successRateDesc')}
                   </p>
                 </div>
               </div>
@@ -183,13 +188,13 @@ const AboutUs = () => {
       {/* CTA Section */}
       <section className="py-20 bg-primary text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Start Your Business Journey?</h2>
+          <h2 className="text-4xl font-bold mb-6">{t('about.ctaTitle')}</h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can help you establish your business in Bahrain or Saudi Arabia
+            {t('about.ctaSubtitle')}
           </p>
           <Link to="/">
             <Button size="lg" className="bg-secondary text-primary hover:bg-secondary/90">
-              Get Started Today
+              {t('about.ctaButton')}
             </Button>
           </Link>
         </div>
