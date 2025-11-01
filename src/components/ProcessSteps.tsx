@@ -1,35 +1,29 @@
 import { MessageSquare, FileText, CheckCircle2, Rocket } from "lucide-react";
 import { useTranslation } from 'react-i18next';
+import { useStrapi } from "@/hooks/useStrapi";
+import { ProcessStep } from "@/types/strapi";
+import * as LucideIcons from "lucide-react";
 
 export const ProcessSteps = () => {
   const { t } = useTranslation();
+  const { data: stepsData, isLoading } = useStrapi<ProcessStep[]>('/process-steps', { 'sort': 'stepNumber:asc' });
   
-  const steps = [
-    {
-      icon: MessageSquare,
-      number: "01",
-      title: t('processSteps.step1Title'),
-      description: t('processSteps.step1Desc')
-    },
-    {
-      icon: FileText,
-      number: "02",
-      title: t('processSteps.step2Title'),
-      description: t('processSteps.step2Desc')
-    },
-    {
-      icon: CheckCircle2,
-      number: "03",
-      title: t('processSteps.step3Title'),
-      description: t('processSteps.step3Desc')
-    },
-    {
-      icon: Rocket,
-      number: "04",
-      title: t('processSteps.step4Title'),
-      description: t('processSteps.step4Desc')
-    }
+  const defaultSteps = [
+    { icon: MessageSquare, number: "01", title: t('processSteps.step1Title'), description: t('processSteps.step1Desc') },
+    { icon: FileText, number: "02", title: t('processSteps.step2Title'), description: t('processSteps.step2Desc') },
+    { icon: CheckCircle2, number: "03", title: t('processSteps.step3Title'), description: t('processSteps.step3Desc') },
+    { icon: Rocket, number: "04", title: t('processSteps.step4Title'), description: t('processSteps.step4Desc') }
   ];
+  
+  const steps = stepsData?.data?.map(step => {
+    const IconComponent = (LucideIcons as any)[step.attributes.icon] || MessageSquare;
+    return {
+      icon: IconComponent,
+      number: String(step.attributes.stepNumber).padStart(2, '0'),
+      title: step.attributes.title,
+      description: step.attributes.description
+    };
+  }) || defaultSteps;
 
   return (
     <section className="py-24 gradient-primary text-white">

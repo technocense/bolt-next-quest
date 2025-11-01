@@ -1,42 +1,31 @@
 import { Building2, FileCheck, CreditCard, Users, Briefcase, Shield } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useTranslation } from 'react-i18next';
+import { useStrapi } from "@/hooks/useStrapi";
+import { Service } from "@/types/strapi";
+import * as LucideIcons from "lucide-react";
 
 export const Services = () => {
   const { t } = useTranslation();
+  const { data: servicesData, isLoading } = useStrapi<Service[]>('/services', { 'sort': 'order:asc' });
   
-  const services = [
-    {
-      icon: Building2,
-      title: t('services.companyFormation'),
-      description: t('services.companyFormationDesc')
-    },
-    {
-      icon: FileCheck,
-      title: t('services.licensing'),
-      description: t('services.licensingDesc')
-    },
-    {
-      icon: Users,
-      title: t('services.visaServices'),
-      description: t('services.visaServicesDesc')
-    },
-    {
-      icon: CreditCard,
-      title: t('services.corporateBanking'),
-      description: t('services.corporateBankingDesc')
-    },
-    {
-      icon: Shield,
-      title: t('services.compliance'),
-      description: t('services.complianceDesc')
-    },
-    {
-      icon: Briefcase,
-      title: t('services.officeServices'),
-      description: t('services.officeServicesDesc')
-    }
+  const defaultServices = [
+    { icon: Building2, title: t('services.companyFormation'), description: t('services.companyFormationDesc') },
+    { icon: FileCheck, title: t('services.licensing'), description: t('services.licensingDesc') },
+    { icon: Users, title: t('services.visaServices'), description: t('services.visaServicesDesc') },
+    { icon: CreditCard, title: t('services.corporateBanking'), description: t('services.corporateBankingDesc') },
+    { icon: Shield, title: t('services.compliance'), description: t('services.complianceDesc') },
+    { icon: Briefcase, title: t('services.officeServices'), description: t('services.officeServicesDesc') }
   ];
+  
+  const services = servicesData?.data?.map(service => {
+    const IconComponent = (LucideIcons as any)[service.attributes.icon] || Building2;
+    return {
+      icon: IconComponent,
+      title: service.attributes.title,
+      description: service.attributes.description
+    };
+  }) || defaultServices;
 
   return (
     <section className="py-24 bg-muted/30">

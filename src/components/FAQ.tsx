@@ -5,36 +5,26 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useTranslation } from 'react-i18next';
+import { useStrapi } from "@/hooks/useStrapi";
+import { FAQItem } from "@/types/strapi";
 
 export const FAQ = () => {
   const { t } = useTranslation();
+  const { data: faqData, isLoading } = useStrapi<FAQItem[]>('/faq-items', { 'sort': 'order:asc' });
   
-  const faqs = [
-    {
-      question: t('faq.q1'),
-      answer: t('faq.a1')
-    },
-    {
-      question: t('faq.q2'),
-      answer: t('faq.a2')
-    },
-    {
-      question: t('faq.q3'),
-      answer: t('faq.a3')
-    },
-    {
-      question: t('faq.q4'),
-      answer: t('faq.a4')
-    },
-    {
-      question: t('faq.q5'),
-      answer: t('faq.a5')
-    },
-    {
-      question: t('faq.q6'),
-      answer: t('faq.a6')
-    }
+  const defaultFaqs = [
+    { question: t('faq.q1'), answer: t('faq.a1') },
+    { question: t('faq.q2'), answer: t('faq.a2') },
+    { question: t('faq.q3'), answer: t('faq.a3') },
+    { question: t('faq.q4'), answer: t('faq.a4') },
+    { question: t('faq.q5'), answer: t('faq.a5') },
+    { question: t('faq.q6'), answer: t('faq.a6') }
   ];
+  
+  const faqs = faqData?.data?.map(item => ({
+    question: item.attributes.question,
+    answer: item.attributes.answer
+  })) || defaultFaqs;
 
   return (
     <section className="py-24 bg-muted/30">

@@ -1,85 +1,39 @@
 import { useEffect, useState } from "react";
 import { Shield, Building2, Users, FileCheck, Landmark, ScrollText, Banknote, Scale } from "lucide-react";
 import { useTranslation } from 'react-i18next';
+import { useStrapi } from "@/hooks/useStrapi";
+import { GovernmentAuthority } from "@/types/strapi";
+import * as LucideIcons from "lucide-react";
 
 export const GovernmentAuthorities = () => {
   const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { data: authoritiesData, isLoading } = useStrapi<GovernmentAuthority[]>('/government-authorities', { 'sort': 'order:asc', 'populate': '*' });
 
-  const authorities = [
-    {
-      name: t('governmentAuthorities.moic'),
-      country: t('governmentAuthorities.bahrain'),
-      icon: Building2,
-      description: t('governmentAuthorities.moicDesc')
-    },
-    {
-      name: t('governmentAuthorities.edb'),
-      country: t('governmentAuthorities.bahrain'),
-      icon: Shield,
-      description: t('governmentAuthorities.edbDesc')
-    },
-    {
-      name: t('governmentAuthorities.lmra'),
-      country: t('governmentAuthorities.bahrain'),
-      icon: Users,
-      description: t('governmentAuthorities.lmraDesc')
-    },
-    {
-      name: t('governmentAuthorities.cbb'),
-      country: t('governmentAuthorities.bahrain'),
-      icon: Landmark,
-      description: t('governmentAuthorities.cbbDesc')
-    },
-    {
-      name: t('governmentAuthorities.nbr'),
-      country: t('governmentAuthorities.bahrain'),
-      icon: FileCheck,
-      description: t('governmentAuthorities.nbrDesc')
-    },
-    {
-      name: t('governmentAuthorities.moi'),
-      country: t('governmentAuthorities.bahrain'),
-      icon: ScrollText,
-      description: t('governmentAuthorities.moiDesc')
-    },
-    {
-      name: t('governmentAuthorities.misa'),
-      country: t('governmentAuthorities.saudiArabia'),
-      icon: Shield,
-      description: t('governmentAuthorities.misaDesc')
-    },
-    {
-      name: t('governmentAuthorities.moc'),
-      country: t('governmentAuthorities.saudiArabia'),
-      icon: Building2,
-      description: t('governmentAuthorities.mocDesc')
-    },
-    {
-      name: t('governmentAuthorities.mhrsd'),
-      country: t('governmentAuthorities.saudiArabia'),
-      icon: Users,
-      description: t('governmentAuthorities.mhrsdDesc')
-    },
-    {
-      name: t('governmentAuthorities.sama'),
-      country: t('governmentAuthorities.saudiArabia'),
-      icon: Landmark,
-      description: t('governmentAuthorities.samaDesc')
-    },
-    {
-      name: t('governmentAuthorities.zatca'),
-      country: t('governmentAuthorities.saudiArabia'),
-      icon: Banknote,
-      description: t('governmentAuthorities.zatcaDesc')
-    },
-    {
-      name: t('governmentAuthorities.misaLegal'),
-      country: t('governmentAuthorities.saudiArabia'),
-      icon: Scale,
-      description: t('governmentAuthorities.misaLegalDesc')
-    }
+  const defaultAuthorities = [
+    { name: t('governmentAuthorities.moic'), country: t('governmentAuthorities.bahrain'), icon: Building2, description: t('governmentAuthorities.moicDesc') },
+    { name: t('governmentAuthorities.edb'), country: t('governmentAuthorities.bahrain'), icon: Shield, description: t('governmentAuthorities.edbDesc') },
+    { name: t('governmentAuthorities.lmra'), country: t('governmentAuthorities.bahrain'), icon: Users, description: t('governmentAuthorities.lmraDesc') },
+    { name: t('governmentAuthorities.cbb'), country: t('governmentAuthorities.bahrain'), icon: Landmark, description: t('governmentAuthorities.cbbDesc') },
+    { name: t('governmentAuthorities.nbr'), country: t('governmentAuthorities.bahrain'), icon: FileCheck, description: t('governmentAuthorities.nbrDesc') },
+    { name: t('governmentAuthorities.moi'), country: t('governmentAuthorities.bahrain'), icon: ScrollText, description: t('governmentAuthorities.moiDesc') },
+    { name: t('governmentAuthorities.misa'), country: t('governmentAuthorities.saudiArabia'), icon: Shield, description: t('governmentAuthorities.misaDesc') },
+    { name: t('governmentAuthorities.moc'), country: t('governmentAuthorities.saudiArabia'), icon: Building2, description: t('governmentAuthorities.mocDesc') },
+    { name: t('governmentAuthorities.mhrsd'), country: t('governmentAuthorities.saudiArabia'), icon: Users, description: t('governmentAuthorities.mhrsdDesc') },
+    { name: t('governmentAuthorities.sama'), country: t('governmentAuthorities.saudiArabia'), icon: Landmark, description: t('governmentAuthorities.samaDesc') },
+    { name: t('governmentAuthorities.zatca'), country: t('governmentAuthorities.saudiArabia'), icon: Banknote, description: t('governmentAuthorities.zatcaDesc') },
+    { name: t('governmentAuthorities.misaLegal'), country: t('governmentAuthorities.saudiArabia'), icon: Scale, description: t('governmentAuthorities.misaLegalDesc') }
   ];
+  
+  const authorities = authoritiesData?.data?.map(authority => {
+    const IconComponent = (LucideIcons as any)[authority.attributes.name.split(' ')[0]] || Shield;
+    return {
+      name: authority.attributes.name,
+      country: 'Bahrain/KSA',
+      icon: IconComponent,
+      description: authority.attributes.description
+    };
+  }) || defaultAuthorities;
 
   useEffect(() => {
     const interval = setInterval(() => {

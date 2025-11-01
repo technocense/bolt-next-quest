@@ -1,42 +1,31 @@
 import { CheckCircle2, Globe, Users, TrendingUp, Clock, Award } from "lucide-react";
 import bahrainOffice from "@/assets/bahrain-office.jpg";
 import { useTranslation } from 'react-i18next';
+import { useStrapi } from "@/hooks/useStrapi";
+import { WhyChooseItem } from "@/types/strapi";
+import * as LucideIcons from "lucide-react";
 
 export const WhyChoose = () => {
   const { t } = useTranslation();
+  const { data: whyChooseData, isLoading } = useStrapi<WhyChooseItem[]>('/why-choose-items', { 'sort': 'order:asc' });
   
-  const benefits = [
-    {
-      icon: CheckCircle2,
-      title: t('whyChoose.streamlined'),
-      description: t('whyChoose.streamlinedDesc')
-    },
-    {
-      icon: Globe,
-      title: t('whyChoose.regional'),
-      description: t('whyChoose.regionalDesc')
-    },
-    {
-      icon: Users,
-      title: t('whyChoose.dedicated'),
-      description: t('whyChoose.dedicatedDesc')
-    },
-    {
-      icon: TrendingUp,
-      title: t('whyChoose.growth'),
-      description: t('whyChoose.growthDesc')
-    },
-    {
-      icon: Clock,
-      title: t('whyChoose.fast'),
-      description: t('whyChoose.fastDesc')
-    },
-    {
-      icon: Award,
-      title: t('whyChoose.proven'),
-      description: t('whyChoose.provenDesc')
-    }
+  const defaultBenefits = [
+    { icon: CheckCircle2, title: t('whyChoose.streamlined'), description: t('whyChoose.streamlinedDesc') },
+    { icon: Globe, title: t('whyChoose.regional'), description: t('whyChoose.regionalDesc') },
+    { icon: Users, title: t('whyChoose.dedicated'), description: t('whyChoose.dedicatedDesc') },
+    { icon: TrendingUp, title: t('whyChoose.growth'), description: t('whyChoose.growthDesc') },
+    { icon: Clock, title: t('whyChoose.fast'), description: t('whyChoose.fastDesc') },
+    { icon: Award, title: t('whyChoose.proven'), description: t('whyChoose.provenDesc') }
   ];
+  
+  const benefits = whyChooseData?.data?.map(item => {
+    const IconComponent = (LucideIcons as any)[item.attributes.icon] || CheckCircle2;
+    return {
+      icon: IconComponent,
+      title: item.attributes.title,
+      description: item.attributes.description
+    };
+  }) || defaultBenefits;
 
   return (
     <section className="py-24">
