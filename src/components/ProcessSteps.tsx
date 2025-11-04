@@ -1,28 +1,14 @@
-import { MessageSquare, FileText, CheckCircle2, Rocket } from "lucide-react";
+import { MessageSquare, FileText, CheckCircle2 } from "lucide-react";
 import { useTranslation } from 'react-i18next';
-import { useStrapi } from "@/hooks/useStrapi";
-import { ProcessStep } from "@/types/strapi";
-import * as LucideIcons from "lucide-react";
 
 export const ProcessSteps = () => {
   const { t } = useTranslation();
-  const { data: stepsData, isLoading } = useStrapi<ProcessStep[]>('/process-steps', { 'sort': 'stepNumber:asc' });
   
-  const defaultSteps = [
+  const steps = [
     { icon: MessageSquare, number: "01", title: "Initial Consultation", description: "Discuss your business goals and requirements for business setup in Bahrain and we'll provide a tailored plan accordingly." },
     { icon: FileText, number: "02", title: "Documentation and Registration", description: "Preparation and submission of necessary documents for business registration in Bahrain." },
     { icon: CheckCircle2, number: "03", title: "Registration and Licensing", description: "We'll handle the registration process and obtain necessary licenses in this step." }
   ];
-  
-  const steps = stepsData?.data?.map(step => {
-    const IconComponent = (LucideIcons as any)[step.attributes.icon] || MessageSquare;
-    return {
-      icon: IconComponent,
-      number: String(step.attributes.stepNumber).padStart(2, '0'),
-      title: step.attributes.title,
-      description: step.attributes.description
-    };
-  }) || defaultSteps;
 
   return (
     <section className="py-24 gradient-primary text-white">

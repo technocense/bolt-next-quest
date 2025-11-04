@@ -1,29 +1,16 @@
-import { CheckCircle2, Globe, Users, TrendingUp, Clock, Award } from "lucide-react";
+import { CheckCircle2, Globe, Users, Award, Zap, MapPin, Headphones } from "lucide-react";
 import bahrainOffice from "@/assets/bahrain-office.jpg";
 import { useTranslation } from 'react-i18next';
-import { useStrapi } from "@/hooks/useStrapi";
-import { WhyChooseItem } from "@/types/strapi";
-import * as LucideIcons from "lucide-react";
 
 export const WhyChoose = () => {
   const { t } = useTranslation();
-  const { data: whyChooseData, isLoading } = useStrapi<WhyChooseItem[]>('/why-choose-items', { 'sort': 'order:asc' });
   
-  const defaultBenefits = [
-    { icon: CheckCircle2, title: "Streamlined Process", description: "We navigate the intricacies of business formation in Bahrain, ensuring a smooth and efficient experience." },
+  const benefits = [
+    { icon: Zap, title: "Streamlined Process", description: "We navigate the intricacies of business formation in Bahrain, ensuring a smooth and efficient experience." },
     { icon: Award, title: "Expert Guidance", description: "Our team offers invaluable insights and strategies tailored to your specific business goals and industry." },
-    { icon: Globe, title: "Local Knowledge", description: "We leverage our extensive understanding of the Bahraini market to guide you through regulations and requirements." },
-    { icon: Users, title: "Ongoing Support", description: "We don't disappear after registration. We provide ongoing support to address any challenges you may face." }
+    { icon: MapPin, title: "Local Knowledge", description: "We leverage our extensive understanding of the Bahraini market to guide you through regulations and requirements." },
+    { icon: Headphones, title: "Ongoing Support", description: "We don't disappear after registration. We provide ongoing support to address any challenges you may face." }
   ];
-  
-  const benefits = whyChooseData?.data?.map(item => {
-    const IconComponent = (LucideIcons as any)[item.attributes.icon] || CheckCircle2;
-    return {
-      icon: IconComponent,
-      title: item.attributes.title,
-      description: item.attributes.description
-    };
-  }) || defaultBenefits;
 
   return (
     <section className="py-24">

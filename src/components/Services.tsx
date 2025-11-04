@@ -1,29 +1,16 @@
-import { Building2, FileCheck, CreditCard, Users, Briefcase, Shield } from "lucide-react";
+import { Building2, FileCheck, CreditCard, Users, RefreshCw } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useTranslation } from 'react-i18next';
-import { useStrapi } from "@/hooks/useStrapi";
-import { Service } from "@/types/strapi";
-import * as LucideIcons from "lucide-react";
 
 export const Services = () => {
   const { t } = useTranslation();
-  const { data: servicesData, isLoading } = useStrapi<Service[]>('/services', { 'sort': 'order:asc' });
   
-  const defaultServices = [
+  const services = [
     { icon: Building2, title: "Company Formation in Bahrain", description: "Complete company formation services with 100% foreign ownership options for services and manufacturing businesses." },
     { icon: Users, title: "Investor Visa Bahrain", description: "Businessman/Investor visa for shareholders with options for dependent visas for spouse and children." },
-    { icon: FileCheck, title: "CR Renewal Bahrain", description: "Hassle-free Commercial Registration renewal services to keep your business compliant." },
+    { icon: RefreshCw, title: "CR Renewal Bahrain", description: "Hassle-free Commercial Registration renewal services to keep your business compliant." },
     { icon: CreditCard, title: "Business Bank Account", description: "Assistance with opening corporate bank accounts for your business transactions in Bahrain." }
   ];
-  
-  const services = servicesData?.data?.map(service => {
-    const IconComponent = (LucideIcons as any)[service.attributes.icon] || Building2;
-    return {
-      icon: IconComponent,
-      title: service.attributes.title,
-      description: service.attributes.description
-    };
-  }) || defaultServices;
 
   return (
     <section className="py-24 bg-muted/30">

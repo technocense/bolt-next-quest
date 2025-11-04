@@ -5,21 +5,13 @@ import logo from "@/assets/bahrain-setup-logo.png";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import { useStrapi } from "@/hooks/useStrapi";
-import { HeroSection } from "@/types/strapi";
 
 export const Hero = () => {
   const { t } = useTranslation();
-  const { data: heroData, isLoading } = useStrapi<HeroSection[]>('/hero-sections', { 'populate': '*' });
-  
-  const hero = heroData?.data?.[0]?.attributes;
-  const backgroundImage = hero?.backgroundImage?.data?.attributes?.url 
-    ? `https://technocense.com${hero.backgroundImage.data.attributes.url}` 
-    : heroImage;
   return <section className="relative min-h-screen flex items-center">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-cover bg-center" style={{
-      backgroundImage: `url(${backgroundImage})`
+      backgroundImage: `url(${heroImage})`
     }}>
         <div className="absolute inset-0 gradient-hero" />
       </div>
@@ -60,21 +52,21 @@ export const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight opacity-0 animate-fade-in-up animate-delay-100">
-            {hero?.title || "Business Setup in Bahrain"}
+            Business Setup in Bahrain
           </h1>
           
           <p className="text-xl text-white/90 mb-8 leading-relaxed opacity-0 animate-fade-in-up animate-delay-200">
-            {hero?.description || "Our expert team is here to guide you through every step of business setup in Bahrain. Streamline your business formation in Bahrain with our expert guidance and unlock the potential of the thriving Bahraini market. Business setup in Bahrain has never been easier & affordable. Starting from BHD 800!"}
+            Our expert team is here to guide you through every step of business setup in Bahrain. Streamline your business formation in Bahrain with our expert guidance and unlock the potential of the thriving Bahraini market. Business setup in Bahrain has never been easier & affordable. Starting from BHD 800!
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up animate-delay-300">
             <Button size="lg" className="bg-secondary text-primary hover:bg-secondary/90 shadow-gold transition-bounce hover:scale-105">
-              {hero?.ctaText || t('hero.startBusiness')}
+              {t('hero.startBusiness')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20 backdrop-blur-sm transition-bounce hover:scale-105">
               <Mail className="mr-2 h-5 w-5" />
-              {hero?.ctaSecondaryText || t('hero.bookConsultation')}
+              {t('hero.bookConsultation')}
             </Button>
           </div>
           
