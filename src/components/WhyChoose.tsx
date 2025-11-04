@@ -10,12 +10,10 @@ export const WhyChoose = () => {
   const { data: whyChooseData, isLoading } = useStrapi<WhyChooseItem[]>('/why-choose-items', { 'sort': 'order:asc' });
   
   const defaultBenefits = [
-    { icon: CheckCircle2, title: t('whyChoose.streamlined'), description: t('whyChoose.streamlinedDesc') },
-    { icon: Globe, title: t('whyChoose.regional'), description: t('whyChoose.regionalDesc') },
-    { icon: Users, title: t('whyChoose.dedicated'), description: t('whyChoose.dedicatedDesc') },
-    { icon: TrendingUp, title: t('whyChoose.growth'), description: t('whyChoose.growthDesc') },
-    { icon: Clock, title: t('whyChoose.fast'), description: t('whyChoose.fastDesc') },
-    { icon: Award, title: t('whyChoose.proven'), description: t('whyChoose.provenDesc') }
+    { icon: CheckCircle2, title: "Streamlined Process", description: "We navigate the intricacies of business formation in Bahrain, ensuring a smooth and efficient experience." },
+    { icon: Award, title: "Expert Guidance", description: "Our team offers invaluable insights and strategies tailored to your specific business goals and industry." },
+    { icon: Globe, title: "Local Knowledge", description: "We leverage our extensive understanding of the Bahraini market to guide you through regulations and requirements." },
+    { icon: Users, title: "Ongoing Support", description: "We don't disappear after registration. We provide ongoing support to address any challenges you may face." }
   ];
   
   const benefits = whyChooseData?.data?.map(item => {

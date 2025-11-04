@@ -10,12 +10,10 @@ export const Services = () => {
   const { data: servicesData, isLoading } = useStrapi<Service[]>('/services', { 'sort': 'order:asc' });
   
   const defaultServices = [
-    { icon: Building2, title: t('services.companyFormation'), description: t('services.companyFormationDesc') },
-    { icon: FileCheck, title: t('services.licensing'), description: t('services.licensingDesc') },
-    { icon: Users, title: t('services.visaServices'), description: t('services.visaServicesDesc') },
-    { icon: CreditCard, title: t('services.corporateBanking'), description: t('services.corporateBankingDesc') },
-    { icon: Shield, title: t('services.compliance'), description: t('services.complianceDesc') },
-    { icon: Briefcase, title: t('services.officeServices'), description: t('services.officeServicesDesc') }
+    { icon: Building2, title: "Company Formation in Bahrain", description: "Complete company formation services with 100% foreign ownership options for services and manufacturing businesses." },
+    { icon: Users, title: "Investor Visa Bahrain", description: "Businessman/Investor visa for shareholders with options for dependent visas for spouse and children." },
+    { icon: FileCheck, title: "CR Renewal Bahrain", description: "Hassle-free Commercial Registration renewal services to keep your business compliant." },
+    { icon: CreditCard, title: "Business Bank Account", description: "Assistance with opening corporate bank accounts for your business transactions in Bahrain." }
   ];
   
   const services = servicesData?.data?.map(service => {

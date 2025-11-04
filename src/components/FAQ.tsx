@@ -13,12 +13,13 @@ export const FAQ = () => {
   const { data: faqData, isLoading } = useStrapi<FAQItem[]>('/faq-items', { 'sort': 'order:asc' });
   
   const defaultFaqs = [
-    { question: t('faq.q1'), answer: t('faq.a1') },
-    { question: t('faq.q2'), answer: t('faq.a2') },
-    { question: t('faq.q3'), answer: t('faq.a3') },
-    { question: t('faq.q4'), answer: t('faq.a4') },
-    { question: t('faq.q5'), answer: t('faq.a5') },
-    { question: t('faq.q6'), answer: t('faq.a6') }
+    { question: "Can I set up a company in Bahrain?", answer: "Yes, foreigners can set up companies in Bahrain. New legislation allows 100% foreign ownership for services and manufacturing businesses. However, there are minimum Bahraini shareholding requirements for other sectors: Trade Sector requires 1 Bahraini share (0.01%) minimum ownership, and Construction Businesses require 51% Bahraini ownership." },
+    { question: "How much time does it take for Company Formation?", answer: "25-45 business days. This is an estimated timeframe, and the actual processing time can vary depending on several factors, including chosen package, company complexity, and government agency workload. At Setup in Bahrain, we strive for efficiency and can provide a more precise estimate based on your specific situation." },
+    { question: "What are requirements for company formation in Bahrain?", answer: "General requirements include: copies of passports for all company owners and directors, a few proposed business names for availability checks, proof of a local business address (virtual or physical), and a basic business plan outlining your activities and goals. Additional considerations include company registration fees, minimum capital deposit (varies by company type), and business licenses." },
+    { question: "How many Resident Permits (Visas) will I get after company formation?", answer: "Typically, each shareholder gets a 'Businessman/Investor' visa. Dependent visas (spouse and children) may be available for shareholders. Companies can initially get 2 work permits for employees, with the potential to increase later." },
+    { question: "How much does it cost to set up a company?", answer: "BHD 800 – BHD 1,340+. This is a starting range, and the total cost can vary depending on several factors, including chosen company structure, government registration fees, agent fees (optional), and business licenses costs." },
+    { question: "What is the legal form of company in Bahrain?", answer: "The most commonly chosen legal form is the Limited Liability Company (WLL), similar to an LLC. Benefits include limited liability (owners' liability is limited to their investment) and relatively easy and affordable setup with a minimum of one partner and low minimum capital requirement. Other options include Branch of a Foreign Company, Partnership Company, and Shareholding Company (Closed or Public)." },
+    { question: "What are the benefits of company formation in Bahrain?", answer: "Key benefits include: favorable tax regime with 0% corporate tax for most businesses, strategic location with easy access to regional markets, stable and business-friendly environment, skilled multilingual workforce, modern infrastructure, access to financial services, streamlined formation process, 100% foreign ownership for most sectors, competitive office space costs, and a welcoming multicultural environment." }
   ];
   
   const faqs = faqData?.data?.map(item => ({

@@ -9,10 +9,9 @@ export const ProcessSteps = () => {
   const { data: stepsData, isLoading } = useStrapi<ProcessStep[]>('/process-steps', { 'sort': 'stepNumber:asc' });
   
   const defaultSteps = [
-    { icon: MessageSquare, number: "01", title: t('processSteps.step1Title'), description: t('processSteps.step1Desc') },
-    { icon: FileText, number: "02", title: t('processSteps.step2Title'), description: t('processSteps.step2Desc') },
-    { icon: CheckCircle2, number: "03", title: t('processSteps.step3Title'), description: t('processSteps.step3Desc') },
-    { icon: Rocket, number: "04", title: t('processSteps.step4Title'), description: t('processSteps.step4Desc') }
+    { icon: MessageSquare, number: "01", title: "Initial Consultation", description: "Discuss your business goals and requirements for business setup in Bahrain and we'll provide a tailored plan accordingly." },
+    { icon: FileText, number: "02", title: "Documentation and Registration", description: "Preparation and submission of necessary documents for business registration in Bahrain." },
+    { icon: CheckCircle2, number: "03", title: "Registration and Licensing", description: "We'll handle the registration process and obtain necessary licenses in this step." }
   ];
   
   const steps = stepsData?.data?.map(step => {
@@ -40,7 +39,7 @@ export const ProcessSteps = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {steps.map((step, index) => (
             <div key={index} className="relative">
               <div 

@@ -31,7 +31,7 @@ export const Hero = () => {
           <div className="flex gap-3">
             <LanguageSwitcher />
             <a 
-              href="https://wa.me/973XXXXXXXX?text=Hello%2C%20I%27m%20interested%20in%20setting%20up%20my%20business%20in%20Bahrain" 
+              href="https://wa.me/97333733381?text=Hello%2C%20I%27m%20interested%20in%20setting%20up%20my%20business%20in%20Bahrain" 
               target="_blank" 
               rel="noopener noreferrer"
             >
@@ -60,11 +60,11 @@ export const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight opacity-0 animate-fade-in-up animate-delay-100">
-            {hero?.title || t('hero.title')}
+            {hero?.title || "Business Setup in Bahrain"}
           </h1>
           
           <p className="text-xl text-white/90 mb-8 leading-relaxed opacity-0 animate-fade-in-up animate-delay-200">
-            {hero?.description || t('hero.description')}
+            {hero?.description || "Our expert team is here to guide you through every step of business setup in Bahrain. Streamline your business formation in Bahrain with our expert guidance and unlock the potential of the thriving Bahraini market. Business setup in Bahrain has never been easier & affordable. Starting from BHD 800!"}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up animate-delay-300">
