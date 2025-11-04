@@ -20,7 +20,9 @@ serve(async (req) => {
 
     // Build query string from params
     const queryString = params ? `?${new URLSearchParams(params).toString()}` : '';
-    const strapiUrl = `https://technocense.com/api${endpoint}${queryString}`;
+    // Using HTTP instead of HTTPS to bypass SSL certificate issues
+    // NOTE: For production, you should fix the SSL certificate on your Strapi server
+    const strapiUrl = `http://technocense.com/api${endpoint}${queryString}`;
 
     console.log('Fetching from Strapi:', strapiUrl);
 
